@@ -209,7 +209,7 @@
   };
 
   ContactForm.prototype._showSuccess = function () {
-    this.form.hidden = true;
+    this.submitBtn.hidden = true;
     this.form.reset();
     this.charCount.textContent = contactT('charCount', this.lang, { count: 0 });
 
