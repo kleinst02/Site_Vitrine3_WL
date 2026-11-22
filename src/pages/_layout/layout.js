@@ -213,6 +213,11 @@ var Layout = (function () {
 
         // Réinitialiser nav.js (car le header a été injecté dynamiquement)
         initNavBehavior();
+
+        // Mettre à jour l'état actif de la nav (les liens n'existaient pas au DOMContentLoaded)
+        if (typeof Router !== 'undefined' && Router.updateActiveLinks) {
+          Router.updateActiveLinks(window.location.pathname);
+        }
       }
     }
 

@@ -382,7 +382,8 @@ var Router = (function () {
     init: init,
     navigate: navigate,
     getAlternateLangPath: getAlternateLangPath,
-    updateNavLinks: updateNavLinks
+    updateNavLinks: updateNavLinks,
+    updateActiveLinks: updateActiveLinks
   };
 
 })();
