@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="contact.title">Contact — Wilfried Langry</title>
+  <meta name="description" content="Contactez Wilfried Langry pour vos projets CRM, transformation numérique ou toute question professionnelle.">
+  <meta property="og:title" content="Contact — Wilfried Langry">
+  <meta property="og:description" content="Contactez Wilfried Langry, consultant senior CRM Salesforce et transformation numérique. Disponible pour vos projets en Hauts-de-France et Île-de-France.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wilfriedlangry.com/contact">
+  <link rel="canonical" href="https://wilfriedlangry.com/contact">
+  <link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/contact">
+  <link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/contact">
+
+  <link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+  <link rel="stylesheet" href="/src/ui/tokens/index.css">
+  <link rel="stylesheet" href="/src/ui/components/nav.css">
+  <link rel="stylesheet" href="/src/ui/components/buttons.css">
+  <link rel="stylesheet" href="/src/ui/components/section.css">
+  <link rel="stylesheet" href="/src/ui/components/typography.css">
+  <link rel="stylesheet" href="/src/ui/components/footer.css">
+  <link rel="stylesheet" href="/src/pages/_layout/layout.css">
+  <link rel="stylesheet" href="/src/components/contact/contact-form.css">
+  <link rel="stylesheet" href="/src/pages/contact/contact.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact — Wilfried Langry",
+    "url": "https://wilfriedlangry.com/contact",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Wilfried Langry",
+      "jobTitle": "Consultant Senior CRM & Transformation Numérique",
+      "url": "https://wilfriedlangry.com",
+      "sameAs": ["https://www.linkedin.com/in/wilfriedlangry"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Professional inquiry",
+        "availableLanguage": ["French", "English"]
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <header id="site-header"></header>
+  <main id="main-content">
+
+    <section class="section" aria-labelledby="contact-page-heading">
+      <div class="container">
+        <h1 id="contact-page-heading" class="page-title" data-i18n="contact.pageTitle">Contact</h1>
+        <p class="page-subtitle" data-i18n="contact.pageSubtitle">Une question, un projet ? N'hésitez pas à me contacter.</p>
+
+        <div class="contact-layout">
+
+          <!-- Formulaire -->
+          <div class="contact-layout__form">
+            <div id="contact-error" class="contact-error" role="alert" aria-live="polite" hidden></div>
+
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name" data-i18n="contact.nameLabel">Nom</label>
+                  <input type="text" id="contact-name" name="name" class="form-input"
+                         required minlength="2" maxlength="100"
+                         aria-required="true" aria-describedby="contact-name-error"
+                         placeholder="Votre nom complet">
+                  <span id="contact-name-error" class="field-error" role="alert" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-email" data-i18n="contact.emailLabel">Email</label>
+                  <input type="email" id="contact-email" name="email" class="form-input"
+                         required aria-required="true" aria-describedby="contact-email-error"
+                         placeholder="votre@email.com">
+                  <span id="contact-email-error" class="field-error" role="alert" aria-live="polite"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-subject" data-i18n="contact.subjectLabel">Sujet</label>
+                <input type="text" id="contact-subject" name="subject" class="form-input"
+                       required minlength="5" maxlength="200"
+                       aria-required="true" aria-describedby="contact-subject-error"
+                       placeholder="L'objet de votre message">
+                <span id="contact-subject-error" class="field-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-message" data-i18n="contact.messageLabel">Message</label>
+                <textarea id="contact-message" name="message" class="form-input form-textarea"
+                          required minlength="10" maxlength="5000" rows="6"
+                          aria-required="true" aria-describedby="contact-message-error contact-message-count"
+                          placeholder="Votre message..."></textarea>
+                <div class="form-group__footer">
+                  <span id="contact-message-error" class="field-error" role="alert" aria-live="polite"></span>
+                  <span id="contact-message-count" class="char-count" aria-live="off">0 / 5 000</span>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg contact-submit" id="contact-submit">
+                <span class="btn-text" data-i18n="contact.submit">Envoyer</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+              </button>
+            </form>
+
+            <div id="contact-success" class="contact-success" role="status" aria-live="polite" hidden>
+              <p class="contact-success__title" data-i18n="contact.successTitle">Message envoyé !</p>
+              <p class="contact-success__text" data-i18n="contact.successText">Merci, je vous répondrai dans les plus brefs délais.</p>
+            </div>
+          </div>
+
+          <!-- Coordonnées -->
+          <aside class="contact-layout__info" aria-label="Coordonnées">
+            <h2 class="contact-info__title" data-i18n="contact.coordTitle">Coordonnées</h2>
+
+            <div class="contact-info__item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <p class="contact-info__label" data-i18n="contact.location">Localisation</p>
+                <p class="contact-info__value" data-i18n="contact.locationValue">Hauts-de-France & Île-de-France</p>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <div>
+                <p class="contact-info__label" data-i18n="contact.linkedin">LinkedIn</p>
+                <a href="https://www.linkedin.com/in/wilfriedlangry" target="_blank" rel="noopener noreferrer" class="contact-info__link">linkedin.com/in/wilfriedlangry</a>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <div>
+                <p class="contact-info__label" data-i18n="contact.languages">Langues</p>
+                <p class="contact-info__value" data-i18n="contact.languagesValue">Français, Anglais professionnel</p>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="/src/i18n/index.js"></script>
+  <script src="/src/pages/_layout/layout.js"></script>
+  <script src="/src/pages/router.js"></script>
+  <script src="/src/components/contact/contact-i18n.js"></script>
+  <script src="/src/components/contact/contact-form.js"></script>
+</body>
+</html>

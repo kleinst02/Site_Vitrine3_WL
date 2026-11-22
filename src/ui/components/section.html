@@ -1,0 +1,129 @@
+<!--
+ * ============================================================
+ * SECTION — Composant générique UI
+ * Design System : Élégant, sobre, professionnel
+ * Dépendances   : tokens.css, section.css
+ *
+ * STRUCTURE
+ *   .section         : wrapper pleine largeur, padding vertical
+ *   .section-alt     : variante fond alterné (--color-surface-alt)
+ *   .section-primary : variante fond primaire bleu
+ *   .section-dark    : variante fond sombre
+ *   .container       : centré max-width 1280px, padding horizontal
+ *   .container--narrow : max-width 768px (articles, texte)
+ *   .section-header  : en-tête de section (surtitre + titre + desc)
+ *
+ * USAGE
+ *   <section class="section">
+ *     <div class="container">
+ *       <!-- Contenu -->
+ *     </div>
+ *   </section>
+ * ============================================================
+-->
+
+<!-- === IMPORT (dans la page hôte) ==========================
+<link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+<link rel="stylesheet" href="/src/ui/components/section.css">
+=========================================================== -->
+
+<!-- --------------------------------------------------------
+  VARIANTE 1 : Section fond normal (blanc/neutre)
+  Usage : sections principales d'une page
+--------------------------------------------------------- -->
+<section class="section" aria-labelledby="section-example-1-title">
+  <div class="container">
+
+    <!-- En-tête de section -->
+    <header class="section-header">
+      <p class="section-eyebrow">Nos services</p>
+      <h2 class="section-title" id="section-example-1-title">
+        Des solutions sur-mesure pour votre entreprise
+      </h2>
+      <p class="section-desc">
+        Nous accompagnons les organisations dans leur transformation numérique
+        grâce à des expertises complémentaires et une approche centrée sur vos objectifs.
+      </p>
+    </header>
+
+    <!-- Contenu — slot pour cartes, grille, etc. -->
+    <div>
+      <!-- [Insérer le contenu de la section ici] -->
+      <p style="color: var(--color-text-muted); font-size: var(--text-sm); text-align:center;">
+        [Contenu de la section]
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- --------------------------------------------------------
+  VARIANTE 2 : Section fond alterné (gris clair)
+  Usage : sections en alternance avec la précédente
+--------------------------------------------------------- -->
+<section class="section section-alt" aria-labelledby="section-example-2-title">
+  <div class="container">
+
+    <header class="section-header">
+      <p class="section-eyebrow">Notre approche</p>
+      <h2 class="section-title" id="section-example-2-title">
+        Une méthode éprouvée en 4 étapes
+      </h2>
+      <p class="section-desc">
+        De l'audit initial au suivi post-déploiement, nous vous accompagnons
+        à chaque étape de votre projet digital.
+      </p>
+    </header>
+
+    <div>
+      <!-- [Insérer le contenu de la section ici] -->
+      <p style="color: var(--color-text-muted); font-size: var(--text-sm); text-align:center;">
+        [Contenu de la section]
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- --------------------------------------------------------
+  VARIANTE 3 : Section fond primaire (CTA, appel à l'action)
+--------------------------------------------------------- -->
+<section class="section section-primary" aria-labelledby="section-example-3-title">
+  <div class="container">
+
+    <header class="section-header">
+      <p class="section-eyebrow">Passez à l'action</p>
+      <h2 class="section-title" id="section-example-3-title">
+        Prêt à démarrer votre projet ?
+      </h2>
+      <p class="section-desc">
+        Échangeons sur vos besoins lors d'un premier appel gratuit de 30 minutes.
+      </p>
+    </header>
+
+    <div style="display:flex; justify-content:center;">
+      <!-- [Insérer bouton CTA ici] -->
+      <p style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-align:center;">
+        [CTA Bouton]
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- --------------------------------------------------------
+  VARIANTE 4 : Container étroit (articles, blog, texte long)
+--------------------------------------------------------- -->
+<section class="section" aria-labelledby="section-example-4-title">
+  <div class="container container--narrow">
+
+    <h1 id="section-example-4-title" style="font-family: var(--font-heading); font-size: var(--text-h2); color: var(--color-text-primary); margin:0 0 var(--space-lg);">
+      Titre d'article
+    </h1>
+    <p style="font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-secondary);">
+      Le container étroit (.container--narrow) limite la largeur à 768px,
+      assurant une longueur de ligne optimale pour la lecture (45-75 caractères).
+    </p>
+
+  </div>
+</section>

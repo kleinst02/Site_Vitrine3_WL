@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="services.title">Services — Wilfried Langry</title>
+  <meta name="description" content="Découvrez mes services : conseil CRM Salesforce, marketing automation Selligent, intégration ETL et accompagnement agile.">
+  <meta property="og:title" content="Services — Wilfried Langry">
+  <meta property="og:description" content="Expertise CRM Salesforce, marketing automation, data ETL et méthodologies agiles.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wilfriedlangry.com/services">
+  <link rel="canonical" href="https://wilfriedlangry.com/services">
+  <link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/services">
+  <link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/services">
+
+  <link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+  <link rel="stylesheet" href="/src/ui/tokens/index.css">
+  <link rel="stylesheet" href="/src/ui/components/nav.css">
+  <link rel="stylesheet" href="/src/ui/components/buttons.css">
+  <link rel="stylesheet" href="/src/ui/components/card.css">
+  <link rel="stylesheet" href="/src/ui/components/section.css">
+  <link rel="stylesheet" href="/src/ui/components/typography.css">
+  <link rel="stylesheet" href="/src/ui/components/divider.css">
+  <link rel="stylesheet" href="/src/ui/components/footer.css">
+  <link rel="stylesheet" href="/src/pages/_layout/layout.css">
+  <link rel="stylesheet" href="/src/pages/services/services.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Services de Wilfried Langry",
+    "itemListElement": [
+      { "@type": "Service", "position": 1, "name": "Salesforce CRM", "description": "Support N3, analyse d'anomalies, gestion des accès, suivi KPI." },
+      { "@type": "Service", "position": 2, "name": "Selligent & Marketing Automation", "description": "Développement CDM, migrations et montées de version." },
+      { "@type": "Service", "position": 3, "name": "Data & ETL", "description": "Flux Talend, DataStage, Pentaho, requêtes SQL Server, Oracle, SOQL." },
+      { "@type": "Service", "position": 4, "name": "Agilité & Documentation", "description": "Scrum Master certifié, ateliers fonctionnels, spécifications." }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <header id="site-header"></header>
+  <main id="main-content">
+
+    <section class="section" aria-labelledby="services-page-heading">
+      <div class="container">
+        <h1 id="services-page-heading" class="page-title" data-i18n="services.pageTitle">Mes services</h1>
+        <p class="page-subtitle" data-i18n="services.pageSubtitle">Des expertises complémentaires pour accompagner votre transformation numérique.</p>
+
+        <div class="services-grid">
+
+          <article id="salesforce" class="service-detail card">
+            <div class="service-detail__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <h2 class="service-detail__title">Salesforce CRM</h2>
+            <p class="service-detail__text">Support niveau 3, analyse d'anomalies, gestion des accès, maintien opérationnel des interfaces et suivi KPI. Intervention sur des environnements Salesforce complexes pour des entreprises internationales.</p>
+            <ul class="service-detail__list">
+              <li>Support N3 et résolution d'anomalies</li>
+              <li>Gestion des accès et profils utilisateurs</li>
+              <li>Requêtes SOQL et reporting</li>
+              <li>Suivi KPI et tableaux de bord</li>
+            </ul>
+          </article>
+
+          <article id="marketing" class="service-detail card">
+            <div class="service-detail__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h2 class="service-detail__title">Selligent & Marketing Automation</h2>
+            <p class="service-detail__text">Développement sur CDM — migrations, montées de version et évolutions. Expertise sur la plateforme Selligent pour optimiser vos campagnes marketing et votre relation client.</p>
+            <ul class="service-detail__list">
+              <li>Développement et personnalisation CDM</li>
+              <li>Migrations et montées de version</li>
+              <li>Automatisation des campagnes marketing</li>
+              <li>Intégration avec les systèmes existants</li>
+            </ul>
+          </article>
+
+          <article id="data" class="service-detail card">
+            <div class="service-detail__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h2 class="service-detail__title">Data & ETL</h2>
+            <p class="service-detail__text">Conception et mise en oeuvre de flux de données avec Talend, DataStage et Pentaho. Requêtes complexes SQL Server, Oracle et SOQL pour l'extraction, la transformation et le chargement de données.</p>
+            <ul class="service-detail__list">
+              <li>Flux ETL : Talend, DataStage, Pentaho</li>
+              <li>Bases de données : SQL Server, Oracle</li>
+              <li>Requêtes SOQL (Salesforce)</li>
+              <li>Qualité et cohérence des données</li>
+            </ul>
+          </article>
+
+          <article id="agile" class="service-detail card">
+            <div class="service-detail__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h2 class="service-detail__title">Agilité & Documentation</h2>
+            <p class="service-detail__text">Scrum Master certifié PSM I. Animation d'ateliers fonctionnels, rédaction de spécifications, cahiers de paramétrage et de test, plans d'assurance qualité.</p>
+            <ul class="service-detail__list">
+              <li>Facilitation Scrum et cérémonies agiles</li>
+              <li>Spécifications fonctionnelles détaillées</li>
+              <li>Cahiers de test et recette</li>
+              <li>Plans d'assurance qualité (PAQ)</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="services-cta">
+          <p class="services-cta__text" data-i18n="services.ctaText">Besoin d'un accompagnement sur mesure ?</p>
+          <a href="/contact" class="btn btn-primary btn-lg" data-i18n="services.ctaCTA">Discutons de votre projet</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="/src/i18n/index.js"></script>
+  <script src="/src/pages/_layout/layout.js"></script>
+  <script src="/src/pages/router.js"></script>
+</body>
+</html>

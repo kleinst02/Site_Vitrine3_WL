@@ -1,0 +1,70 @@
+<section class="section" aria-labelledby="contact-heading">
+  <div class="container">
+    <h2 id="contact-heading" class="section-title">Contactez-moi</h2>
+    <p class="section-subtitle">Une question, un projet ? N'hésitez pas à me contacter.</p>
+
+    <!-- Erreur serveur globale -->
+    <div id="contact-error" class="contact-error" role="alert" aria-live="polite" hidden></div>
+
+    <form id="contact-form" class="contact-form" novalidate>
+
+      <!-- Nom + Email côte à côte sur desktop -->
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="contact-name">Nom *</label>
+          <input type="text" id="contact-name" name="name" class="form-input"
+                 required minlength="2" maxlength="100"
+                 aria-required="true" aria-describedby="contact-name-error"
+                 placeholder="Votre nom complet">
+          <span id="contact-name-error" class="field-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-email">Email *</label>
+          <input type="email" id="contact-email" name="email" class="form-input"
+                 required
+                 aria-required="true" aria-describedby="contact-email-error"
+                 placeholder="votre@email.com">
+          <span id="contact-email-error" class="field-error" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <!-- Sujet -->
+      <div class="form-group">
+        <label class="form-label" for="contact-subject">Sujet *</label>
+        <input type="text" id="contact-subject" name="subject" class="form-input"
+               required minlength="5" maxlength="200"
+               aria-required="true" aria-describedby="contact-subject-error"
+               placeholder="L'objet de votre message">
+        <span id="contact-subject-error" class="field-error" role="alert" aria-live="polite"></span>
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label class="form-label" for="contact-message">Message *</label>
+        <textarea id="contact-message" name="message" class="form-input form-textarea"
+                  required minlength="10" maxlength="5000" rows="6"
+                  aria-required="true" aria-describedby="contact-message-error contact-message-count"
+                  placeholder="Votre message..."></textarea>
+        <div class="form-group__footer">
+          <span id="contact-message-error" class="field-error" role="alert" aria-live="polite"></span>
+          <span id="contact-message-count" class="char-count" aria-live="off">0 / 5 000</span>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-primary btn-lg contact-submit" id="contact-submit">
+        <span class="btn-text">Envoyer</span>
+        <span class="btn-spinner" aria-hidden="true"></span>
+      </button>
+
+    </form>
+
+    <!-- Message de succès (caché par défaut) -->
+    <div id="contact-success" class="contact-success" role="status" aria-live="polite" hidden>
+      <p class="contact-success__title">Message envoyé !</p>
+      <p class="contact-success__text">Merci, je vous répondrai dans les plus brefs délais.</p>
+    </div>
+
+  </div>
+</section>

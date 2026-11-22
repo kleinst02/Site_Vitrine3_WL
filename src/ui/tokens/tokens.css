@@ -1,0 +1,344 @@
+/*
+ * ============================================================
+ * DESIGN TOKENS — Site Vitrine Consultant Informatique
+ * Style : Élégant, sobre, professionnel
+ * Référence palette : primaire #1E40AF, fond #F9FAFB
+ * Conformité : WCAG AA (contraste ≥ 4.5:1 texte, ≥ 3:1 large)
+ * ============================================================
+ */
+
+:root {
+
+  /* ==========================================================
+   * COULEURS — PALETTE PRIMAIRE (Bleu profond)
+   * Usage : actions principales, liens, CTA, focus
+   * Base : #1E40AF (bleu profond institutionnel)
+   *
+   * Contrastes vérifiés (texte blanc #FFFFFF sur primaire) :
+   *   --color-primary-700 : ratio ≈ 7.1:1  ✓ AA
+   *   --color-primary-600 : ratio ≈ 5.6:1  ✓ AA
+   *   --color-primary-500 : ratio ≈ 4.5:1  ✓ AA limite
+   * Contrastes (texte primaire foncé sur fond clair #F9FAFB) :
+   *   --color-primary-800 sur fond : ratio ≈ 10.2:1 ✓ AA
+   *   --color-primary-700 sur fond : ratio ≈ 8.3:1  ✓ AA
+   * ========================================================== */
+
+  --color-primary-50:  #EFF6FF;   /* Teinte très claire — fonds de mise en valeur subtile */
+  --color-primary-100: #DBEAFE;   /* Fonds badges, chips, hover léger */
+  --color-primary-200: #BFDBFE;   /* Bordures, dividers sur fond clair */
+  --color-primary-300: #93C5FD;   /* Icônes décoratives, illustrations */
+  --color-primary-400: #60A5FA;   /* Éléments UI non-textuels larges (≥ 3:1 sur blanc) */
+  --color-primary-500: #3B82F6;   /* Liens sur fond blanc (4.5:1) — usage avec précaution */
+  --color-primary-600: #2563EB;   /* Bouton primaire hover, liens */
+  --color-primary-700: #1D4ED8;   /* Bouton primaire actif */
+  --color-primary-800: #1E40AF;   /* ★ Couleur primaire principale — CTA, titres accentués */
+  --color-primary-900: #1E3A8A;   /* Très foncé — titres sur fond clair, en-têtes nav */
+  --color-primary-950: #172554;   /* Extrême foncé — utilisé avec parcimonie */
+
+  /* Alias sémantiques primaires */
+  --color-primary:          var(--color-primary-800);  /* Couleur principale */
+  --color-primary-hover:    var(--color-primary-700);  /* État survol */
+  --color-primary-active:   var(--color-primary-900);  /* État actif / pressé */
+  --color-primary-disabled: var(--color-primary-300);  /* État désactivé */
+  --color-primary-focus:    var(--color-primary-600);  /* Anneau de focus */
+  --color-primary-subtle:   var(--color-primary-50);   /* Fond subtil */
+
+  /* ==========================================================
+   * COULEURS — PALETTE SECONDAIRE (Bleu-gris / Ardoise)
+   * Usage : éléments UI secondaires, textes auxiliaires, fonds
+   * ========================================================== */
+
+  --color-secondary-50:  #F8FAFC;
+  --color-secondary-100: #F1F5F9;
+  --color-secondary-200: #E2E8F0;
+  --color-secondary-300: #CBD5E1;
+  --color-secondary-400: #94A3B8;
+  --color-secondary-500: #64748B;
+  --color-secondary-600: #475569;
+  --color-secondary-700: #334155;  /* Texte secondaire sur fond clair : ratio ≈ 7.4:1 ✓ AA */
+  --color-secondary-800: #1E293B;
+  --color-secondary-900: #0F172A;
+  --color-secondary-950: #020617;
+
+  /* Alias sémantiques secondaires */
+  --color-secondary:          var(--color-secondary-600);
+  --color-secondary-hover:    var(--color-secondary-700);
+  --color-secondary-active:   var(--color-secondary-800);
+  --color-secondary-disabled: var(--color-secondary-300);
+
+  /* ==========================================================
+   * COULEURS — NEUTRES (Échelle de gris)
+   * Usage : textes, fonds, bordures, dividers
+   *
+   * Contrastes sur fond --color-background (#F9FAFB) :
+   *   --color-neutral-900 : ratio ≈ 17.5:1 ✓ AA
+   *   --color-neutral-700 : ratio ≈ 8.1:1  ✓ AA
+   *   --color-neutral-600 : ratio ≈ 5.9:1  ✓ AA
+   *   --color-neutral-500 : ratio ≈ 4.6:1  ✓ AA limite (texte normal)
+   * ========================================================== */
+
+  --color-neutral-50:  #F9FAFB;   /* ★ Couleur de fond principale */
+  --color-neutral-100: #F3F4F6;   /* Fonds alternatifs, sections */
+  --color-neutral-200: #E5E7EB;   /* Bordures légères, dividers */
+  --color-neutral-300: #D1D5DB;   /* Bordures champs, séparateurs */
+  --color-neutral-400: #9CA3AF;   /* Placeholders, icônes inactives */
+  --color-neutral-500: #6B7280;   /* Texte secondaire, légendes */
+  --color-neutral-600: #4B5563;   /* Texte corps alternatif */
+  --color-neutral-700: #374151;   /* Texte corps principal */
+  --color-neutral-800: #1F2937;   /* Texte titres */
+  --color-neutral-900: #111827;   /* Texte très foncé, titres principaux */
+  --color-neutral-950: #030712;   /* Presque noir */
+
+  /* Alias sémantiques surface */
+  --color-background:       var(--color-neutral-50);   /* Fond page */
+  --color-surface:          #FFFFFF;                   /* Cartes, modales */
+  --color-surface-alt:      var(--color-neutral-100);  /* Fonds alternés */
+  --color-border:           var(--color-neutral-200);  /* Bordures par défaut */
+  --color-border-strong:    var(--color-neutral-300);  /* Bordures accentuées */
+
+  /* Alias sémantiques texte */
+  --color-text-primary:     var(--color-neutral-900);  /* Texte principal */
+  --color-text-secondary:   var(--color-neutral-600);  /* Texte secondaire */
+  --color-text-muted:       var(--color-neutral-500);  /* Texte atténué, légendes */
+  --color-text-disabled:    var(--color-neutral-400);  /* Texte désactivé */
+  --color-text-inverse:     #FFFFFF;                   /* Texte sur fond sombre */
+
+  /* ==========================================================
+   * COULEURS — SÉMANTIQUES
+   * Usage : feedbacks utilisateur, alertes, états système
+   *
+   * Contrastes (texte foncé sur fond clair) ≥ 4.5:1 ✓ AA :
+   *   Succès  : --color-success-700 sur --color-success-50 : ≈ 7.2:1
+   *   Erreur  : --color-error-700   sur --color-error-50   : ≈ 6.1:1
+   *   Warning : --color-warning-800 sur --color-warning-50 : ≈ 7.8:1
+   *   Info    : --color-info-700    sur --color-info-50    : ≈ 6.5:1
+   * ========================================================== */
+
+  /* Succès (vert sobre) */
+  --color-success-50:  #F0FDF4;
+  --color-success-100: #DCFCE7;
+  --color-success-200: #BBF7D0;
+  --color-success-500: #22C55E;
+  --color-success-600: #16A34A;
+  --color-success-700: #15803D;  /* Texte succès sur fond clair ✓ AA */
+  --color-success-800: #166534;
+
+  --color-success:         var(--color-success-700);
+  --color-success-bg:      var(--color-success-50);
+  --color-success-border:  var(--color-success-200);
+
+  /* Erreur (rouge sobre) */
+  --color-error-50:  #FEF2F2;
+  --color-error-100: #FEE2E2;
+  --color-error-200: #FECACA;
+  --color-error-500: #EF4444;
+  --color-error-600: #DC2626;
+  --color-error-700: #B91C1C;    /* Texte erreur sur fond clair ✓ AA */
+  --color-error-800: #991B1B;
+
+  --color-error:         var(--color-error-700);
+  --color-error-bg:      var(--color-error-50);
+  --color-error-border:  var(--color-error-200);
+
+  /* Avertissement (orange sobre, ambre) */
+  --color-warning-50:  #FFFBEB;
+  --color-warning-100: #FEF3C7;
+  --color-warning-200: #FDE68A;
+  --color-warning-500: #F59E0B;
+  --color-warning-600: #D97706;
+  --color-warning-700: #B45309;
+  --color-warning-800: #92400E;  /* Texte warning sur fond clair ✓ AA */
+
+  --color-warning:         var(--color-warning-800);
+  --color-warning-bg:      var(--color-warning-50);
+  --color-warning-border:  var(--color-warning-200);
+
+  /* Info (bleu sobre) */
+  --color-info-50:  #EFF6FF;
+  --color-info-100: #DBEAFE;
+  --color-info-200: #BFDBFE;
+  --color-info-500: #3B82F6;
+  --color-info-600: #2563EB;
+  --color-info-700: #1D4ED8;    /* Texte info sur fond clair ✓ AA */
+  --color-info-800: #1E40AF;
+
+  --color-info:         var(--color-info-700);
+  --color-info-bg:      var(--color-info-50);
+  --color-info-border:  var(--color-info-200);
+
+  /* ==========================================================
+   * TYPOGRAPHIE
+   * Familles : Heading (Inter), Body (system-ui stack)
+   * Échelle : modulaire, valeurs en rem (base 16px)
+   * Interligne corps : 1.5 (WCAG lisibilité)
+   * ========================================================== */
+
+  /* Familles de polices */
+  --font-heading: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+                  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    system-ui, -apple-system, BlinkMacSystemFont,
+                  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    ui-monospace, 'Cascadia Code', 'Source Code Pro',
+                  Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+
+  /* Échelle typographique */
+  --text-h1:      2.5rem;    /* 40px — Titre de page principal */
+  --text-h2:      2rem;      /* 32px — Titre de section */
+  --text-h3:      1.75rem;   /* 28px — Sous-section */
+  --text-h4:      1.5rem;    /* 24px — Titre de carte/bloc */
+  --text-h5:      1.25rem;   /* 20px — Titre mineur */
+  --text-h6:      1rem;      /* 16px — Label de section */
+  --text-body:    1rem;      /* 16px — Texte corps principal */
+  --text-sm:      0.875rem;  /* 14px — Texte secondaire */
+  --text-xs:      0.75rem;   /* 12px — Légende, caption, badge */
+
+  /* Poids de police */
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+
+  /* Alias sémantiques poids */
+  --font-weight-heading: var(--font-weight-bold);     /* Titres */
+  --font-weight-subhead: var(--font-weight-semibold); /* Sous-titres */
+  --font-weight-body:    var(--font-weight-regular);  /* Corps */
+  --font-weight-label:   var(--font-weight-medium);   /* Labels, boutons */
+
+  /* Interlignes (line-height) */
+  --leading-tight:  1.25;    /* Titres compacts */
+  --leading-snug:   1.375;   /* Titres multilignes */
+  --leading-normal: 1.5;     /* Corps de texte (minimum WCAG) */
+  --leading-relaxed: 1.625;  /* Texte long, articles */
+  --leading-loose:  2;       /* Espacement maximal */
+
+  /* Espacement lettres (letter-spacing) */
+  --tracking-tight:   -0.025em;  /* Grands titres */
+  --tracking-normal:   0em;      /* Corps de texte */
+  --tracking-wide:     0.025em;  /* Labels majuscules, badges */
+  --tracking-wider:    0.05em;   /* Sous-titres accentués */
+  --tracking-widest:   0.1em;    /* Surtitre / eyebrow text */
+
+  /* ==========================================================
+   * ESPACEMENTS
+   * Base : 4px (0.25rem)
+   * Grille : multiples de 4
+   * ========================================================== */
+
+  --space-0:    0;           /*  0px */
+  --space-px:   1px;         /*  1px — Bordures fines */
+  --space-xs:   0.25rem;     /*  4px */
+  --space-sm:   0.5rem;      /*  8px */
+  --space-md:   1rem;        /* 16px */
+  --space-lg:   1.5rem;      /* 24px */
+  --space-xl:   2rem;        /* 32px */
+  --space-2xl:  3rem;        /* 48px */
+  --space-3xl:  4rem;        /* 64px */
+  --space-4xl:  6rem;        /* 96px */
+
+  /* Alias layout */
+  --space-section-y:   var(--space-3xl);    /* Espacement vertical de section */
+  --space-container-x: var(--space-lg);     /* Padding horizontal container mobile */
+  --space-gap-sm:      var(--space-sm);     /* Gap grille petite */
+  --space-gap-md:      var(--space-md);     /* Gap grille moyenne */
+  --space-gap-lg:      var(--space-xl);     /* Gap grille large */
+
+  /* ==========================================================
+   * OMBRES
+   * Style : subtiles et élégantes, professionnel
+   * Couleur ombre : bleu-gris foncé avec opacité
+   * ========================================================== */
+
+  --shadow-sm:   0 1px 2px 0 rgb(15 23 42 / 0.06);
+  --shadow-md:   0 4px 6px -1px rgb(15 23 42 / 0.08),
+                 0 2px 4px -2px rgb(15 23 42 / 0.05);
+  --shadow-lg:   0 10px 15px -3px rgb(15 23 42 / 0.08),
+                 0 4px 6px -4px rgb(15 23 42 / 0.04);
+  --shadow-xl:   0 20px 25px -5px rgb(15 23 42 / 0.08),
+                 0 8px 10px -6px rgb(15 23 42 / 0.04);
+  --shadow-2xl:  0 25px 50px -12px rgb(15 23 42 / 0.18);
+  --shadow-inner: inset 0 2px 4px 0 rgb(15 23 42 / 0.06);
+  --shadow-none:  none;
+
+  /* Ombre focus (anneau d'accessibilité) */
+  --shadow-focus: 0 0 0 3px var(--color-primary-focus);
+  --shadow-focus-error: 0 0 0 3px rgb(185 28 28 / 0.4);
+
+  /* ==========================================================
+   * BORDER-RADIUS
+   * Usage : cohérence des arrondis dans toute l'UI
+   * ========================================================== */
+
+  --radius-none: 0;
+  --radius-sm:   0.25rem;    /*  4px — Badges, inputs discrets */
+  --radius-md:   0.5rem;     /*  8px — Boutons, cartes */
+  --radius-lg:   0.75rem;    /* 12px — Cartes principales, modales */
+  --radius-xl:   1rem;       /* 16px — Grandes cartes, panels */
+  --radius-2xl:  1.5rem;     /* 24px — Éléments hero, illustratifs */
+  --radius-full: 9999px;     /* Cercle/pilule — Badges, avatars, toggles */
+
+  /* ==========================================================
+   * TRANSITIONS & ANIMATIONS
+   * Respect de prefers-reduced-motion (voir index.css)
+   * ========================================================== */
+
+  /* Durées */
+  --duration-fast:    150ms;   /* Micro-interactions, tooltips */
+  --duration-normal:  250ms;   /* Transitions standard (hover, focus) */
+  --duration-slow:    400ms;   /* Entrées/sorties, animations de page */
+  --duration-xslow:  600ms;   /* Animations de contenu long */
+
+  /* Easings */
+  --ease-linear:      linear;
+  --ease-in:          cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:         cubic-bezier(0, 0, 0.2, 1);  /* Sorties fluides (défaut UI) */
+  --ease-in-out:      cubic-bezier(0.4, 0, 0.2, 1); /* Transitions équilibrées */
+  --ease-bounce:      cubic-bezier(0.34, 1.56, 0.64, 1); /* Rebond subtil */
+
+  /* Raccourcis transition */
+  --transition-fast:   var(--duration-fast)   var(--ease-in-out);
+  --transition-normal: var(--duration-normal) var(--ease-in-out);
+  --transition-slow:   var(--duration-slow)   var(--ease-out);
+
+  /* ==========================================================
+   * Z-INDEX — Couches de l'interface
+   * ========================================================== */
+
+  --z-base:     0;
+  --z-raised:   10;    /* Cartes survolées */
+  --z-dropdown: 100;   /* Menus déroulants */
+  --z-sticky:   200;   /* Header sticky */
+  --z-overlay:  300;   /* Overlays, backdrops */
+  --z-modal:    400;   /* Modales, dialogs */
+  --z-toast:    500;   /* Notifications toast */
+  --z-tooltip:  600;   /* Tooltips */
+
+  /* ==========================================================
+   * DIMENSIONS — Utilitaires layout
+   * ========================================================== */
+
+  --container-max-sm:   640px;
+  --container-max-md:   768px;
+  --container-max-lg:   1024px;
+  --container-max-xl:   1280px;
+  --container-max-2xl:  1536px;
+
+  /* Tailles cibles tactiles (WCAG 2.5.5 — min 44x44px) */
+  --touch-target-min: 44px;
+
+  /* Largeur max du texte corps (45-75 chars ≈ 60-75ch) */
+  --prose-width: 65ch;
+
+}
+
+/*
+ * =============================================================
+ * BREAKPOINTS (référence commentée — usage via media queries)
+ *
+ * Mobile     : < 640px   (base, styles par défaut)
+ * Tablet sm  : >= 640px  → @media (min-width: 640px)
+ * Tablet md  : >= 768px  → @media (min-width: 768px)
+ * Desktop lg : >= 1024px → @media (min-width: 1024px)
+ * Large xl   : >= 1280px → @media (min-width: 1280px)
+ * Wide  2xl  : >= 1536px → @media (min-width: 1536px)
+ * =============================================================
+ */

@@ -1,0 +1,14 @@
+<!-- Composant : Navigation article précédent/suivant -->
+<nav class="article-nav" aria-label="Navigation entre articles">
+  <!-- Article précédent -->
+  <a href="/blog/{prev_slug}" class="article-nav__link article-nav__prev" aria-label="Article précédent : {prev_title}">
+    <span class="article-nav__direction">&larr; Article précédent</span>
+    <span class="article-nav__title">{prev_title}</span>
+  </a>
+
+  <!-- Article suivant -->
+  <a href="/blog/{next_slug}" class="article-nav__link article-nav__next" aria-label="Article suivant : {next_title}">
+    <span class="article-nav__direction">Article suivant &rarr;</span>
+    <span class="article-nav__title">{next_title}</span>
+  </a>
+</nav>

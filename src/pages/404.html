@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable — Wilfried Langry</title>
+  <meta name="description" content="La page que vous cherchez n'existe pas ou a été déplacée.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+  <link rel="stylesheet" href="/src/ui/tokens/index.css">
+  <link rel="stylesheet" href="/src/ui/components/nav.css">
+  <link rel="stylesheet" href="/src/ui/components/buttons.css">
+  <link rel="stylesheet" href="/src/ui/components/footer.css">
+  <link rel="stylesheet" href="/src/pages/_layout/layout.css">
+</head>
+<body>
+
+  <!-- Skip to content -->
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Navigation -->
+  <header id="site-header"></header>
+
+  <main id="main-content">
+    <section class="section error-page" aria-labelledby="error-heading" style="text-align:center; min-height:60vh; display:flex; align-items:center; justify-content:center;">
+      <div class="container">
+
+        <!-- Illustration 404 -->
+        <div class="error-page__visual" aria-hidden="true" style="font-size:8rem; line-height:1; color:var(--color-primary); margin-bottom:var(--space-lg); font-weight:var(--font-weight-bold); font-family:var(--font-heading);">
+          404
+        </div>
+
+        <h1 id="error-heading" data-i18n="error404.title" style="font-family:var(--font-heading); font-size:var(--text-h2); font-weight:var(--font-weight-bold); color:var(--color-text-primary); margin-bottom:var(--space-md);">
+          Page introuvable
+        </h1>
+
+        <p data-i18n="error404.text" style="font-family:var(--font-body); font-size:var(--text-body); color:var(--color-text-secondary); max-width:480px; margin:0 auto var(--space-xl);">
+          La page que vous cherchez n'existe pas ou a été déplacée.
+        </p>
+
+        <a href="/" class="btn btn-primary btn-lg" data-i18n="error404.cta">
+          Retour à l'accueil
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="site-footer"></footer>
+
+  <!-- Scripts -->
+  <script src="/src/i18n/index.js"></script>
+  <script src="/src/pages/router.js"></script>
+  <script src="/src/pages/_layout/layout.js"></script>
+</body>
+</html>

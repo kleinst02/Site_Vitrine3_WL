@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="about.title">À propos — Wilfried Langry</title>
+  <meta name="description" content="Découvrez le parcours de Wilfried Langry : consultant senior CRM Salesforce, ancien responsable qualité, certifié Scrum Master PSM I.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="À propos — Wilfried Langry">
+  <meta property="og:description" content="Consultant senior CRM et transformation numérique. 15+ ans d'expérience en qualité industrielle et conseil CRM.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://wilfriedlangry.com/a-propos">
+
+  <!-- Canonical & Hreflang -->
+  <link rel="canonical" href="https://wilfriedlangry.com/a-propos">
+  <link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/a-propos">
+  <link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/about">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+  <link rel="stylesheet" href="/src/ui/tokens/index.css">
+  <link rel="stylesheet" href="/src/ui/components/nav.css">
+  <link rel="stylesheet" href="/src/ui/components/buttons.css">
+  <link rel="stylesheet" href="/src/ui/components/card.css">
+  <link rel="stylesheet" href="/src/ui/components/badge.css">
+  <link rel="stylesheet" href="/src/ui/components/section.css">
+  <link rel="stylesheet" href="/src/ui/components/typography.css">
+  <link rel="stylesheet" href="/src/ui/components/divider.css">
+  <link rel="stylesheet" href="/src/ui/components/footer.css">
+  <link rel="stylesheet" href="/src/pages/_layout/layout.css">
+  <link rel="stylesheet" href="/src/components/profile/timeline.css">
+  <link rel="stylesheet" href="/src/components/profile/skills-list.css">
+  <link rel="stylesheet" href="/src/components/cv/cv-download.css">
+  <link rel="stylesheet" href="/src/pages/about/about.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <header id="site-header"></header>
+
+  <main id="main-content">
+
+    <!-- ============================================
+         INTRO / BIO
+         ============================================ -->
+    <section class="section" aria-labelledby="about-heading">
+      <div class="container about-intro">
+        <div class="about-intro__photo">
+          <img src="/public/assets/photo.jpg" alt="Wilfried Langry" class="about-intro__img" width="320" height="320" loading="eager">
+        </div>
+        <div class="about-intro__content">
+          <h1 id="about-heading" class="about-intro__title">Wilfried Langry</h1>
+          <p class="about-intro__role" data-i18n="about.role">Consultant Senior CRM & Transformation Numérique</p>
+          <p class="about-intro__bio" data-i18n="about.bio">
+            Consultant senior CRM et transformation numérique chez Magellan. J'interviens sur Salesforce
+            pour une entreprise internationale après des projets Selligent et ETL. Ancien manager qualité
+            en industrie agroalimentaire (10+ ans), j'apporte rigueur et documentation à chaque mission.
+          </p>
+          <div class="about-intro__actions">
+            <div class="cv-download-wrapper">
+              <button type="button" class="btn btn-primary btn-lg cv-download" id="cv-download-btn" data-lang="fr">
+                <svg class="cv-download__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="12" y1="18" x2="12" y2="12"/>
+                  <polyline points="9 15 12 18 15 15"/>
+                </svg>
+                <span class="cv-download__text">Télécharger mon CV</span>
+                <span class="cv-download__spinner" aria-hidden="true"></span>
+              </button>
+              <div id="cv-download-error" class="cv-download__error" role="alert" aria-live="polite" hidden></div>
+            </div>
+            <a href="/contact" class="btn btn-outline btn-lg" data-i18n="home.heroCTA">Me contacter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator" aria-hidden="true"></div>
+
+    <!-- ============================================
+         TIMELINE EXPÉRIENCES
+         ============================================ -->
+    <section class="section" aria-labelledby="experience-heading">
+      <div class="container">
+        <h2 id="experience-heading" class="section-title" data-i18n="about.experience">Parcours professionnel</h2>
+        <div class="timeline" role="list" aria-label="Parcours professionnel">
+          <div class="timeline__item" role="listitem">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__date">2022 — <span data-i18n="about.present">Présent</span></div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Consultant Senior CRM Salesforce</h3>
+              <p class="timeline__company">Magellan (ex-Newbound) — Puteaux</p>
+              <p class="timeline__description">Mission CRM Salesforce pour une entreprise internationale. Support N3, analyse d'anomalies, gestion des accès, suivi KPI.</p>
+            </div>
+          </div>
+          <div class="timeline__item" role="listitem">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__date">2021 — 2022</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Consultant CRM Selligent</h3>
+              <p class="timeline__company">Newbound — Noyon</p>
+              <p class="timeline__description">Développement et maintenance sur Selligent CDM. Migrations et montées de version.</p>
+            </div>
+          </div>
+          <div class="timeline__item" role="listitem">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__date">2020 — 2021</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Consultant CRM/Web & Scrum Master</h3>
+              <p class="timeline__company">Aoomuki — Noyon</p>
+              <p class="timeline__description">Conseil CRM et développement web. Animation d'ateliers Scrum, spécifications fonctionnelles.</p>
+            </div>
+          </div>
+          <div class="timeline__item" role="listitem">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__date">2006 — 2018</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Responsable Qualité Industrielle</h3>
+              <p class="timeline__company">Daunat / McCain — Hauts-de-France</p>
+              <p class="timeline__description">Management qualité en industrie agroalimentaire pendant plus de 10 ans. Rigueur, documentation, amélioration continue.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         COMPÉTENCES
+         ============================================ -->
+    <section class="section section--alt" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 id="skills-heading" class="section-title" data-i18n="about.skills">Compétences</h2>
+        <div class="skills-list">
+          <div class="skills-category">
+            <h3 class="skills-category__title">CRM & Marketing</h3>
+            <div class="skills-category__tags">
+              <span class="badge">Salesforce</span><span class="badge">SOQL</span><span class="badge">Selligent CDM</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h3 class="skills-category__title">Data & ETL</h3>
+            <div class="skills-category__tags">
+              <span class="badge">Talend</span><span class="badge">DataStage</span><span class="badge">Pentaho</span><span class="badge">SQL Server</span><span class="badge">Oracle</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h3 class="skills-category__title">Développement Web</h3>
+            <div class="skills-category__tags">
+              <span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">JavaScript</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h3 class="skills-category__title">Méthodologie</h3>
+            <div class="skills-category__tags">
+              <span class="badge">Scrum (PSM I)</span><span class="badge">Agilité</span><span class="badge">Documentation qualité</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FORMATION & CERTIFICATIONS
+         ============================================ -->
+    <section class="section" aria-labelledby="education-heading">
+      <div class="container">
+        <h2 id="education-heading" class="section-title" data-i18n="about.education">Formation & Certifications</h2>
+        <div class="education-list">
+          <div class="education-item card">
+            <h3 class="education-item__title">PSM I — Professional Scrum Master</h3>
+            <p class="education-item__org">Scrum.org</p>
+          </div>
+          <div class="education-item card">
+            <h3 class="education-item__title">Certification Selligent CDM</h3>
+            <p class="education-item__org">Selligent</p>
+          </div>
+          <div class="education-item card">
+            <h3 class="education-item__title">Titre Développeur Web / Web Mobile</h3>
+            <p class="education-item__org">2019</p>
+          </div>
+          <div class="education-item card">
+            <h3 class="education-item__title">Licence Biologie</h3>
+            <p class="education-item__org">Université Picardie Jules Verne</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/src/i18n/index.js"></script>
+  <script src="/src/pages/_layout/layout.js"></script>
+  <script src="/src/pages/router.js"></script>
+  <script src="/src/components/profile/profile-i18n.js"></script>
+  <script src="/src/components/cv/cv-download.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+{
+  "lang": "fr",
+  "langName": "Français",
+  "langSwitch": "EN",
+  "langSwitchLabel": "Switch to English",
+
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "portfolio": "Réalisations",
+    "blog": "Blog",
+    "contact": "Contact",
+    "logo": "Wilfried Langry",
+    "menuOpen": "Ouvrir le menu de navigation",
+    "menuClose": "Fermer le menu de navigation"
+  },
+
+  "home": {
+    "title": "Wilfried Langry — Consultant Senior CRM & Transformation Numérique",
+    "metaDesc": "Consultant senior CRM Salesforce et transformation numérique. Expertise Salesforce, Selligent, ETL et méthodologies agiles.",
+    "heroEyebrow": "Consultant Senior CRM & Transformation Numérique",
+    "heroTitle": "Accélérez votre <span class=\"hero__highlight\">transformation digitale</span> avec un expert CRM",
+    "heroSubtitle": "Fort de 15+ ans d'expérience en management qualité et en conseil CRM, j'accompagne les entreprises dans la mise en place et l'optimisation de leurs solutions Salesforce, Selligent et ETL.",
+    "heroCTA": "Me contacter",
+    "heroSecondary": "Mes services",
+    "servicesTitle": "Mes expertises",
+    "servicesSubtitle": "Des compétences éprouvées au service de votre croissance.",
+    "ctaTitle": "Un projet ? Une question ?",
+    "ctaText": "N'hésitez pas à me contacter pour discuter de vos besoins en CRM et transformation numérique."
+  },
+
+  "about": {
+    "title": "À propos — Wilfried Langry",
+    "metaDesc": "Découvrez le parcours de Wilfried Langry : consultant senior CRM Salesforce, ancien responsable qualité, certifié Scrum Master PSM I.",
+    "role": "Consultant Senior CRM & Transformation Numérique",
+    "bio": "Consultant senior CRM et transformation numérique chez Magellan. J'interviens sur Salesforce pour une entreprise internationale après des projets Selligent et ETL. Ancien manager qualité en industrie agroalimentaire (10+ ans), j'apporte rigueur et documentation à chaque mission.",
+    "experience": "Parcours professionnel",
+    "skills": "Compétences",
+    "education": "Formation & Certifications",
+    "present": "Présent"
+  },
+
+  "services": {
+    "title": "Services — Wilfried Langry",
+    "metaDesc": "Conseil CRM Salesforce, marketing automation Selligent, intégration ETL et accompagnement agile.",
+    "pageTitle": "Mes services",
+    "pageSubtitle": "Des expertises complémentaires pour accompagner votre transformation numérique.",
+    "ctaText": "Besoin d'un accompagnement sur mesure ?",
+    "ctaCTA": "Discutons de votre projet",
+    "learnMore": "En savoir plus"
+  },
+
+  "portfolio": {
+    "title": "Réalisations — Wilfried Langry",
+    "metaDesc": "Portfolio de projets CRM, marketing automation et ETL.",
+    "pageTitle": "Réalisations",
+    "pageSubtitle": "Quelques projets représentatifs de mon parcours.",
+    "ctaTitle": "Envie d'en savoir plus ?",
+    "ctaText": "Contactez-moi pour discuter de vos besoins.",
+    "viewProject": "Voir le projet"
+  },
+
+  "blog": {
+    "title": "Blog — Wilfried Langry",
+    "metaDesc": "Articles sur le CRM, Salesforce, la transformation numérique et l'agilité.",
+    "pageTitle": "Blog",
+    "pageSubtitle": "Réflexions et retours d'expérience sur le CRM, la data et l'agilité.",
+    "readMore": "Lire la suite",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "pageOf": "Page {current} sur {total}",
+    "noArticles": "Aucun article pour le moment.",
+    "loading": "Chargement des articles...",
+    "error": "Impossible de charger les articles.",
+    "backToList": "← Retour aux articles",
+    "publishedOn": "Publié le",
+    "by": "Par"
+  },
+
+  "contact": {
+    "title": "Contact — Wilfried Langry",
+    "metaDesc": "Contactez Wilfried Langry pour vos projets CRM ou toute question professionnelle.",
+    "pageTitle": "Contact",
+    "pageSubtitle": "Une question, un projet ? N'hésitez pas à me contacter.",
+    "coordTitle": "Coordonnées",
+    "location": "Localisation",
+    "locationValue": "Hauts-de-France & Île-de-France",
+    "linkedin": "LinkedIn",
+    "languages": "Langues",
+    "languagesValue": "Français, Anglais professionnel",
+    "nameLabel": "Nom",
+    "emailLabel": "Email",
+    "subjectLabel": "Sujet",
+    "messageLabel": "Message",
+    "submit": "Envoyer",
+    "sending": "Envoi en cours...",
+    "successTitle": "Message envoyé !",
+    "successText": "Merci, je vous répondrai dans les plus brefs délais."
+  },
+
+  "footer": {
+    "copyright": "© {year} Wilfried Langry. Tous droits réservés.",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "cookies": "Cookies",
+    "a11y": "Accessibilité"
+  },
+
+  "error404": {
+    "title": "Page introuvable",
+    "text": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "cta": "Retour à l'accueil"
+  },
+
+  "routes": {
+    "home": "/",
+    "about": "/a-propos",
+    "services": "/services",
+    "portfolio": "/realisations",
+    "blog": "/blog",
+    "contact": "/contact"
+  }
+}

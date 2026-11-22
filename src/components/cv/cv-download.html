@@ -1,0 +1,14 @@
+<!-- Composant : Bouton téléchargement CV PDF -->
+<div class="cv-download-wrapper">
+  <button type="button" class="btn btn-primary btn-lg cv-download" id="cv-download-btn" data-lang="fr">
+    <svg class="cv-download__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="12" y1="18" x2="12" y2="12"/>
+      <polyline points="9 15 12 18 15 15"/>
+    </svg>
+    <span class="cv-download__text">Télécharger mon CV</span>
+    <span class="cv-download__spinner" aria-hidden="true"></span>
+  </button>
+  <div id="cv-download-error" class="cv-download__error" role="alert" aria-live="polite" hidden></div>
+</div>

@@ -1,0 +1,153 @@
+<!--
+ * ============================================================
+ * CARD — Composant générique UI
+ * Design System : Élégant, sobre, professionnel
+ * Dépendances   : tokens.css, card.css, buttons.css
+ *
+ * ÉTATS DOCUMENTÉS
+ *   Défaut   : Rendu normal, ombre légère (--shadow-md)
+ *   Survol   : Ombre renforcée (--shadow-xl) + léger soulèvement
+ *   Focus    : Anneau box-shadow (--shadow-focus) pour carte lien
+ *
+ * USAGE
+ *   Carte simple  : <article class="card">…</article>
+ *   Carte lien    : <a href="…" class="card">…</a>
+ *   Carte hoverable (sans lien): ajouter .card--hoverable
+ * ============================================================
+-->
+
+<!-- === IMPORT (dans la page hôte) ==========================
+<link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+<link rel="stylesheet" href="/src/ui/components/buttons.css">
+<link rel="stylesheet" href="/src/ui/components/card.css">
+=========================================================== -->
+
+<!-- --------------------------------------------------------
+  VARIANTE 1 : Carte complète — image + titre + texte + footer CTA
+--------------------------------------------------------- -->
+<article class="card" style="max-width:360px;">
+
+  <!-- Image optionnelle en tête -->
+  <img
+    class="card-img"
+    src="/assets/images/placeholder-service.jpg"
+    alt="Illustration du service de conseil informatique"
+    width="720"
+    height="405"
+    loading="lazy"
+  >
+
+  <div class="card-body">
+    <!-- Titre sémantique : adapter le niveau (h2/h3) au contexte -->
+    <h3 class="card-title">Consulting Informatique</h3>
+    <p class="card-text">
+      Nous accompagnons les entreprises dans leur transformation numérique,
+      de l'audit initial jusqu'au déploiement de solutions sur-mesure.
+    </p>
+  </div>
+
+  <footer class="card-footer">
+    <a href="/services/consulting" class="btn btn-primary btn-sm">
+      Découvrir
+    </a>
+    <span style="font-size: var(--text-sm); color: var(--color-text-muted);">5 min de lecture</span>
+  </footer>
+
+</article>
+
+<!-- --------------------------------------------------------
+  VARIANTE 2 : Carte sans image
+--------------------------------------------------------- -->
+<article class="card" style="max-width:360px;">
+
+  <div class="card-body">
+    <h3 class="card-title">Développement Web</h3>
+    <p class="card-text card-text--clamp">
+      Création de sites vitrine, applications web et plateformes e-commerce
+      performantes, accessibles et optimisées pour le référencement naturel.
+    </p>
+  </div>
+
+  <footer class="card-footer">
+    <a href="/services/developpement" class="btn btn-outline btn-sm">
+      En savoir plus
+    </a>
+  </footer>
+
+</article>
+
+<!-- --------------------------------------------------------
+  VARIANTE 3 : Carte entièrement cliquable (lien <a>)
+  Accessibilité : le titre porte le nom accessible de la carte
+--------------------------------------------------------- -->
+<a href="/realisations/projet-alpha" class="card" style="max-width:360px;" aria-label="Projet Alpha — Voir la réalisation">
+
+  <img
+    class="card-img"
+    src="/assets/images/projet-alpha.jpg"
+    alt="Capture d'écran du Projet Alpha"
+    width="720"
+    height="405"
+    loading="lazy"
+  >
+
+  <div class="card-body">
+    <h3 class="card-title">Projet Alpha</h3>
+    <p class="card-text">
+      Refonte complète de l'infrastructure cloud d'une PME industrielle.
+    </p>
+  </div>
+
+</a>
+
+<!-- --------------------------------------------------------
+  VARIANTE 4 : Carte horizontale (image à gauche, desktop)
+--------------------------------------------------------- -->
+<article class="card card--horizontal" style="max-width:640px;">
+
+  <img
+    class="card-img"
+    src="/assets/images/equipe.jpg"
+    alt="L'équipe en réunion de projet"
+    width="400"
+    height="300"
+    loading="lazy"
+  >
+
+  <div class="card-body">
+    <h3 class="card-title">Notre équipe</h3>
+    <p class="card-text">
+      Une équipe pluridisciplinaire de consultants seniors, passionnés par
+      l'innovation technologique et l'excellence opérationnelle.
+    </p>
+    <footer class="card-footer" style="border-top:none; padding:var(--space-md) 0 0;">
+      <a href="/a-propos" class="btn btn-ghost btn-sm">
+        Rencontrer l'équipe
+      </a>
+    </footer>
+  </div>
+
+</article>
+
+<!-- --------------------------------------------------------
+  VARIANTE 5 : Carte placeholder (image absente)
+  Usage : skeleton ou fallback sans image
+--------------------------------------------------------- -->
+<article class="card" style="max-width:360px;">
+
+  <div class="card-img-placeholder" role="img" aria-label="Image à venir">
+    <svg aria-hidden="true" focusable="false" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+      <circle cx="8.5" cy="8.5" r="1.5"/>
+      <polyline points="21 15 16 10 5 21"/>
+    </svg>
+  </div>
+
+  <div class="card-body">
+    <h3 class="card-title">Service à venir</h3>
+    <p class="card-text">
+      Description de ce service en cours de rédaction. Revenez bientôt pour plus d'informations.
+    </p>
+  </div>
+
+</article>

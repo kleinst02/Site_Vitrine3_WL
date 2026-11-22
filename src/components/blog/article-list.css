@@ -1,0 +1,65 @@
+/* ==========================================================
+ * Composant : Liste d'articles + pagination
+ * Dépendances : /src/ui/tokens/tokens.css
+ * ========================================================== */
+
+/* --- Grille responsive ----------------------------------- */
+
+.article-list__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .article-list__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .article-list__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- Pagination ------------------------------------------ */
+
+.article-list__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.article-list__page-info {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* --- États ----------------------------------------------- */
+
+.blog-loading,
+.blog-empty,
+.blog-error {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.blog-loading p,
+.blog-empty p {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+}
+
+.blog-error p {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-error);
+}

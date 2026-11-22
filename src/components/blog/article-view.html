@@ -1,0 +1,20 @@
+<!-- Composant : Vue article complet -->
+<article class="article-view" aria-labelledby="article-title">
+  <header class="article-view__header">
+    <a href="/blog" class="article-view__back text-link">&larr; Retour aux articles</a>
+    <div class="article-view__meta">
+      <time class="article-view__date" datetime="{published_at}">{date_formatted}</time>
+      <span class="badge">{category}</span>
+    </div>
+    <h1 id="article-title" class="article-view__title">{title}</h1>
+  </header>
+
+  <!-- Contenu HTML rendu depuis le Markdown -->
+  <div class="article-view__content article-prose">
+    {content_html}
+  </div>
+
+  <footer class="article-view__footer">
+    <p class="article-view__author">Par <strong>{author}</strong></p>
+  </footer>
+</article>

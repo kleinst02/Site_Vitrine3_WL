@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Titre et meta dynamiques via JS -->
+  <title>Article — Blog Wilfried Langry</title>
+  <meta name="description" content="">
+  <meta property="og:type" content="article">
+
+  <!-- SEO : canonical et hreflang — mis à jour dynamiquement par le script ci-dessous -->
+  <link rel="canonical" href="" id="canonical-url">
+  <link rel="alternate" hreflang="fr" href="" id="hreflang-fr">
+  <link rel="alternate" hreflang="en" href="" id="hreflang-en">
+  <link rel="alternate" hreflang="x-default" href="" id="hreflang-default">
+
+  <link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+  <link rel="stylesheet" href="/src/ui/tokens/index.css">
+  <link rel="stylesheet" href="/src/ui/components/nav.css">
+  <link rel="stylesheet" href="/src/ui/components/buttons.css">
+  <link rel="stylesheet" href="/src/ui/components/badge.css">
+  <link rel="stylesheet" href="/src/ui/components/section.css">
+  <link rel="stylesheet" href="/src/ui/components/typography.css">
+  <link rel="stylesheet" href="/src/ui/components/footer.css">
+  <link rel="stylesheet" href="/src/pages/_layout/layout.css">
+  <link rel="stylesheet" href="/src/components/blog/article-view.css">
+  <link rel="stylesheet" href="/src/components/blog/article-nav.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <header id="site-header"></header>
+  <main id="main-content">
+
+    <section class="section">
+      <div class="container">
+        <article id="article-view" class="article-view" aria-labelledby="article-title">
+          <!-- Chargé dynamiquement via JS -->
+          <div class="blog-loading" role="status"><p>Chargement de l'article...</p></div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="/src/i18n/index.js"></script>
+  <script src="/src/pages/_layout/layout.js"></script>
+  <script src="/src/pages/router.js"></script>
+  <script src="/src/components/blog/blog-i18n.js"></script>
+  <script>
+  (function () {
+    'use strict';
+    var lang = (document.documentElement.lang || 'fr').startsWith('en') ? 'en' : 'fr';
+    var slug = window.location.pathname.split('/').pop();
+
+    fetch('/api/articles/' + encodeURIComponent(slug) + '?lang=' + lang)
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        var article = data.article || data;
+        var view = document.getElementById('article-view');
+
+        // Meta SEO dynamiques
+        document.title = article.title + ' — Blog Wilfried Langry';
+        var metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.content = article.excerpt || '';
+
+        // Canonical et hreflang dynamiques selon le slug et la langue
+        var BASE = 'https://wilfriedlangry.com';
+        var frHref = BASE + '/fr/blog/' + encodeURIComponent(slug);
+        var enHref = BASE + '/en/blog/' + encodeURIComponent(slug);
+        var canonicalHref = lang === 'en' ? enHref : frHref;
+        var canonicalEl = document.getElementById('canonical-url');
+        var hreflangFr = document.getElementById('hreflang-fr');
+        var hreflangEn = document.getElementById('hreflang-en');
+        var hreflangDefault = document.getElementById('hreflang-default');
+        if (canonicalEl) canonicalEl.setAttribute('href', canonicalHref);
+        if (hreflangFr) hreflangFr.setAttribute('href', frHref);
+        if (hreflangEn) hreflangEn.setAttribute('href', enHref);
+        if (hreflangDefault) hreflangDefault.setAttribute('href', frHref);
+
+        // Schema.org BlogPosting
+        var schema = document.createElement('script');
+        schema.type = 'application/ld+json';
+        schema.textContent = JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": article.title,
+          "datePublished": article.published_at,
+          "author": { "@type": "Person", "name": "Wilfried Langry" },
+          "description": article.excerpt || ''
+        });
+        document.head.appendChild(schema);
+
+        // Rendu
+        var date = new Date(article.published_at).toLocaleDateString(
+          lang === 'en' ? 'en-GB' : 'fr-FR',
+          { year: 'numeric', month: 'long', day: 'numeric' }
+        );
+
+        // Construction sûre du DOM — textContent pour toutes les valeurs issues de la BDD
+        // afin d'éviter toute injection XSS (title, category).
+        // Seul article.content_html utilise innerHTML car il est sanitisé côté serveur
+        // par sanitize-html avant d'être retourné par /api/articles/:slug.
+
+        // En-tête de l'article
+        var articleHeader = document.createElement('header');
+        articleHeader.className = 'article-view__header';
+
+        var backLink = document.createElement('a');
+        backLink.href = '/blog';
+        backLink.className = 'article-view__back text-link';
+        backLink.textContent = blogT('backToList', lang);
+        articleHeader.appendChild(backLink);
+
+        var metaDiv = document.createElement('div');
+        metaDiv.className = 'article-view__meta';
+
+        var timeEl = document.createElement('time');
+        timeEl.className = 'article-view__date';
+        timeEl.setAttribute('datetime', article.published_at);
+        timeEl.textContent = date;
+        metaDiv.appendChild(timeEl);
+
+        if (article.category) {
+          var categoryEl = document.createElement('span');
+          categoryEl.className = 'badge';
+          // textContent évite toute injection XSS via la valeur category
+          categoryEl.textContent = article.category;
+          metaDiv.appendChild(categoryEl);
+        }
+        articleHeader.appendChild(metaDiv);
+
+        var titleEl = document.createElement('h1');
+        titleEl.id = 'article-title';
+        titleEl.className = 'article-view__title';
+        // textContent évite toute injection XSS via la valeur title
+        titleEl.textContent = article.title;
+        articleHeader.appendChild(titleEl);
+
+        // Corps de l'article — innerHTML autorisé car le contenu est sanitisé
+        // côté serveur (sanitize-html) avant d'être exposé par /api/articles/:slug
+        var contentDiv = document.createElement('div');
+        contentDiv.className = 'article-view__content article-prose';
+        contentDiv.innerHTML = article.content_html || article.content || '';
+
+        // Pied de l'article
+        var articleFooter = document.createElement('footer');
+        articleFooter.className = 'article-view__footer';
+        var authorP = document.createElement('p');
+        authorP.className = 'article-view__author';
+        authorP.innerHTML = 'Par <strong>Wilfried Langry</strong>';
+        articleFooter.appendChild(authorP);
+
+        // Vider le conteneur et insérer les éléments construits
+        view.innerHTML = '';
+        view.appendChild(articleHeader);
+        view.appendChild(contentDiv);
+        view.appendChild(articleFooter);
+      })
+      .catch(function () {
+        document.getElementById('article-view').innerHTML =
+          '<p class="blog-error">' + blogT('error', lang) + '</p>';
+      });
+  })();
+  </script>
+</body>
+</html>

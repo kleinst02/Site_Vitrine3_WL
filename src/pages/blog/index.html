@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="blog.title">Blog — Wilfried Langry</title>
+  <meta name="description" content="Articles sur le CRM, Salesforce, la transformation numérique, l'agilité et les bonnes pratiques ETL.">
+  <meta property="og:title" content="Blog — Wilfried Langry">
+  <meta property="og:description" content="Articles et actualités sur le CRM, Salesforce, la transformation numérique et les méthodologies agiles par Wilfried Langry.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wilfriedlangry.com/blog">
+  <link rel="canonical" href="https://wilfriedlangry.com/blog">
+  <link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/blog">
+  <link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/blog">
+
+  <link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+  <link rel="stylesheet" href="/src/ui/tokens/index.css">
+  <link rel="stylesheet" href="/src/ui/components/nav.css">
+  <link rel="stylesheet" href="/src/ui/components/buttons.css">
+  <link rel="stylesheet" href="/src/ui/components/card.css">
+  <link rel="stylesheet" href="/src/ui/components/badge.css">
+  <link rel="stylesheet" href="/src/ui/components/section.css">
+  <link rel="stylesheet" href="/src/ui/components/typography.css">
+  <link rel="stylesheet" href="/src/ui/components/footer.css">
+  <link rel="stylesheet" href="/src/pages/_layout/layout.css">
+  <link rel="stylesheet" href="/src/components/blog/article-card.css">
+  <link rel="stylesheet" href="/src/components/blog/article-list.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog de Wilfried Langry",
+    "description": "Articles sur le CRM, la transformation numérique et l'agilité",
+    "url": "https://wilfriedlangry.com/blog",
+    "author": {
+      "@type": "Person",
+      "name": "Wilfried Langry"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <header id="site-header"></header>
+  <main id="main-content">
+
+    <section class="section" aria-labelledby="blog-heading">
+      <div class="container">
+        <h1 id="blog-heading" class="page-title" data-i18n="blog.pageTitle">Blog</h1>
+        <p class="page-subtitle" data-i18n="blog.pageSubtitle">Réflexions et retours d'expérience sur le CRM, la data et l'agilité.</p>
+
+        <div id="blog-loading" class="blog-loading" role="status" aria-live="polite">
+          <p data-i18n="blog.loading">Chargement des articles...</p>
+        </div>
+        <div id="blog-error" class="blog-error" role="alert" aria-live="polite" hidden>
+          <p data-i18n="blog.error">Impossible de charger les articles.</p>
+        </div>
+        <div id="blog-empty" class="blog-empty" role="status" aria-live="polite" hidden>
+          <p data-i18n="blog.noArticles">Aucun article pour le moment.</p>
+        </div>
+        <div id="blog-grid" class="article-list__grid" aria-live="polite" hidden></div>
+
+        <nav id="blog-pagination" class="article-list__pagination" aria-label="Pagination" hidden>
+          <button id="blog-prev" class="btn btn-secondary" disabled>&larr; <span class="pagination-label" data-i18n="blog.previous">Précédent</span></button>
+          <span id="blog-page-info" class="article-list__page-info">Page 1 sur 1</span>
+          <button id="blog-next" class="btn btn-secondary" disabled><span class="pagination-label" data-i18n="blog.next">Suivant</span> &rarr;</button>
+        </nav>
+      </div>
+    </section>
+
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="/src/i18n/index.js"></script>
+  <script src="/src/pages/_layout/layout.js"></script>
+  <script src="/src/pages/router.js"></script>
+  <script src="/src/components/blog/blog-i18n.js"></script>
+  <script src="/src/components/blog/article-list.js"></script>
+</body>
+</html>

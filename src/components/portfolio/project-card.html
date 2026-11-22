@@ -1,0 +1,33 @@
+<!-- Composant : Carte projet (portfolio) -->
+<article class="project-card card">
+  <!-- Image ou placeholder -->
+  <div class="project-card__image">
+    <img src="{image_url}" alt="Capture du projet {title}" loading="lazy" class="project-card__img">
+    <!-- Placeholder si pas d'image :
+    <div class="project-card__placeholder" role="img" aria-label="Illustration du projet">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+    </div>
+    -->
+  </div>
+
+  <div class="project-card__body">
+    <h3 class="project-card__title">{title}</h3>
+    <p class="project-card__description">{description}</p>
+
+    <!-- Technologies -->
+    <div class="project-card__tags">
+      <span class="badge badge-sm">{tech_1}</span>
+      <span class="badge badge-sm">{tech_2}</span>
+      <span class="badge badge-sm">{tech_3}</span>
+    </div>
+
+    <!-- Lien externe -->
+    <a href="{url}" class="project-card__link text-link" target="_blank" rel="noopener noreferrer">
+      Voir le projet &rarr;
+    </a>
+  </div>
+</article>

@@ -1,0 +1,106 @@
+<!--
+ * ============================================================
+ * DIVIDER — Composant générique UI
+ * Design System : Élégant, sobre, professionnel
+ * Dépendances   : tokens.css, divider.css
+ *
+ * VARIANTES DISPONIBLES
+ *   .divider              : Séparateur fin neutre (1px, couleur bordure)
+ *   .divider-accent       : Séparateur accentué dégradé bleu primaire (2px)
+ *   .divider--short       : Court, centré (60px) — décoratif sous-titre
+ *   .divider-label        : Avec texte au centre (ex. "OU", "ET")
+ *   .divider-vertical     : Vertical inline pour séparer des éléments
+ *   .divider--compact     : Marges réduites
+ *   .divider--spacious    : Marges plus larges
+ *   .divider--bold        : Trait épais (3px)
+ *
+ * ACCESSIBILITÉ
+ *   - Utiliser <hr role="separator"> pour les séparateurs sémantiques
+ *   - Ajouter aria-hidden="true" sur les séparateurs purement décoratifs
+ *   - Le séparateur avec label utilise role="separator" + aria-label
+ * ============================================================
+-->
+
+<!-- === IMPORT (dans la page hôte) ==========================
+<link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+<link rel="stylesheet" href="/src/ui/components/divider.css">
+=========================================================== -->
+
+<div style="padding:var(--space-xl); display:flex; flex-direction:column; gap:var(--space-xs); max-width:800px;">
+
+  <!-- TITRE DE DÉMONSTRATION -->
+  <h2 style="font-family:var(--font-heading); font-size:var(--text-h4); color:var(--color-text-primary); margin:0 0 var(--space-xs);">Variantes de séparateurs</h2>
+
+  <p style="font-size:var(--text-sm); color:var(--color-text-secondary); margin:0 0 var(--space-lg);">Aperçu de tous les séparateurs disponibles dans le design system.</p>
+
+  <!-- --------------------------------------------------------
+    VARIANTE 1 : Séparateur neutre standard
+  --------------------------------------------------------- -->
+  <p style="font-size:var(--text-xs); color:var(--color-text-muted); letter-spacing:var(--tracking-wide); text-transform:uppercase; font-weight:var(--font-weight-semibold);">.divider (neutre, 1px)</p>
+  <hr class="divider" role="separator" aria-hidden="true">
+
+  <!-- --------------------------------------------------------
+    VARIANTE 2 : Séparateur accentué (couleur primaire, dégradé)
+    Idéal sous un titre de section pour apporter du caractère
+  --------------------------------------------------------- -->
+  <p style="font-size:var(--text-xs); color:var(--color-text-muted); letter-spacing:var(--tracking-wide); text-transform:uppercase; font-weight:var(--font-weight-semibold); margin-top:var(--space-md);">.divider + .divider-accent (bleu dégradé, 2px)</p>
+  <hr class="divider divider-accent" role="separator" aria-hidden="true">
+
+  <!-- --------------------------------------------------------
+    VARIANTE 3 : Séparateur court centré (décoratif sous-titre)
+    Usage : Sous un titre de section pour souligner l'accent
+  --------------------------------------------------------- -->
+  <p style="font-size:var(--text-xs); color:var(--color-text-muted); letter-spacing:var(--tracking-wide); text-transform:uppercase; font-weight:var(--font-weight-semibold); margin-top:var(--space-md);">.divider-accent + .divider--short (60px centré)</p>
+  <hr class="divider divider-accent divider--short" role="separator" aria-hidden="true">
+
+  <!-- --------------------------------------------------------
+    VARIANTE 4 : Séparateur avec texte au centre
+    Usage : Formulaires (login/inscription), alternances de contenu
+  --------------------------------------------------------- -->
+  <p style="font-size:var(--text-xs); color:var(--color-text-muted); letter-spacing:var(--tracking-wide); text-transform:uppercase; font-weight:var(--font-weight-semibold); margin-top:var(--space-md);">.divider-label (avec texte)</p>
+
+  <div class="divider-label" role="separator" aria-label="Section suivante">
+    <span class="divider-label__line" aria-hidden="true"></span>
+    <span class="divider-label__text">OU</span>
+    <span class="divider-label__line" aria-hidden="true"></span>
+  </div>
+
+  <!-- Avec texte différent -->
+  <div class="divider-label" role="separator" aria-label="Et aussi">
+    <span class="divider-label__line" aria-hidden="true"></span>
+    <span class="divider-label__text">ET AUSSI</span>
+    <span class="divider-label__line" aria-hidden="true"></span>
+  </div>
+
+  <!-- --------------------------------------------------------
+    VARIANTE 5 : Séparateur épais
+  --------------------------------------------------------- -->
+  <p style="font-size:var(--text-xs); color:var(--color-text-muted); letter-spacing:var(--tracking-wide); text-transform:uppercase; font-weight:var(--font-weight-semibold); margin-top:var(--space-md);">.divider + .divider--bold (3px)</p>
+  <hr class="divider divider--bold" role="separator" aria-hidden="true">
+
+  <!-- --------------------------------------------------------
+    VARIANTE 6 : Séparateur vertical inline
+    Usage : Dans une barre d'actions, entre des éléments horizontaux
+  --------------------------------------------------------- -->
+  <p style="font-size:var(--text-xs); color:var(--color-text-muted); letter-spacing:var(--tracking-wide); text-transform:uppercase; font-weight:var(--font-weight-semibold); margin-top:var(--space-md);">.divider-vertical (inline)</p>
+
+  <div style="display:flex; align-items:center; gap:0; font-size:var(--text-sm); color:var(--color-text-secondary);">
+    <a href="#" style="color:var(--color-primary); text-decoration:none; padding:var(--space-xs) var(--space-sm);">Mentions légales</a>
+    <span class="divider-vertical" role="separator" aria-hidden="true"></span>
+    <a href="#" style="color:var(--color-primary); text-decoration:none; padding:var(--space-xs) var(--space-sm);">Confidentialité</a>
+    <span class="divider-vertical" role="separator" aria-hidden="true"></span>
+    <a href="#" style="color:var(--color-primary); text-decoration:none; padding:var(--space-xs) var(--space-sm);">Cookies</a>
+  </div>
+
+  <!-- --------------------------------------------------------
+    USAGE TYPIQUE : Séparateur accentué sous un titre de section
+    Montre comment combiner avec le composant typography
+  --------------------------------------------------------- -->
+  <div style="margin-top:var(--space-2xl); text-align:center;">
+    <p style="font-size:var(--text-xs); color:var(--color-text-muted); letter-spacing:var(--tracking-wide); text-transform:uppercase; font-weight:var(--font-weight-semibold); margin-bottom:var(--space-md);">USAGE EN CONTEXTE</p>
+    <p style="font-family:var(--font-body); font-size:var(--text-xs); color:var(--color-primary); letter-spacing:var(--tracking-widest); text-transform:uppercase; font-weight:var(--font-weight-semibold); margin:0 0 var(--space-xs);">Nos expertises</p>
+    <h2 style="font-family:var(--font-heading); font-size:var(--text-h2); font-weight:var(--font-weight-bold); color:var(--color-text-primary); letter-spacing:var(--tracking-tight); margin:0 0 var(--space-md);">Services & Réalisations</h2>
+    <hr class="divider divider-accent divider--short" role="separator" aria-hidden="true">
+  </div>
+
+</div>

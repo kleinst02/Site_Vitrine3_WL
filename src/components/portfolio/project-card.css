@@ -1,0 +1,91 @@
+/* ==========================================================
+ * Composant : Carte projet (portfolio)
+ * Dépendances : /src/ui/tokens/tokens.css, card.css, badge.css
+ * ========================================================== */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card:hover { transform: none; }
+}
+
+/* --- Image ----------------------------------------------- */
+
+.project-card__image {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  overflow: hidden;
+  background-color: var(--color-secondary-100);
+}
+
+.project-card__img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.project-card:hover .project-card__img {
+  transform: scale(1.03);
+}
+
+.project-card__placeholder {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-secondary-300);
+}
+
+/* --- Body ------------------------------------------------ */
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-lg);
+}
+
+.project-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h5);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-sm);
+}
+
+.project-card__description {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin: 0 0 var(--space-md);
+  flex: 1;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.project-card__link {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  margin-top: auto;
+}

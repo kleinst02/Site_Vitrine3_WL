@@ -1,0 +1,36 @@
+<!-- Composant : Liste d'articles avec pagination -->
+<section class="section" aria-labelledby="blog-heading">
+  <div class="container">
+    <h2 id="blog-heading" class="section-title">Blog</h2>
+
+    <!-- État : chargement -->
+    <div id="blog-loading" class="blog-loading" role="status" aria-live="polite">
+      <p>Chargement des articles...</p>
+    </div>
+
+    <!-- État : erreur -->
+    <div id="blog-error" class="blog-error" role="alert" aria-live="polite" hidden>
+      <p>Impossible de charger les articles.</p>
+    </div>
+
+    <!-- État : aucun article -->
+    <div id="blog-empty" class="blog-empty" role="status" aria-live="polite" hidden>
+      <p>Aucun article pour le moment.</p>
+    </div>
+
+    <!-- Grille d'articles -->
+    <div id="blog-grid" class="article-list__grid" aria-live="polite" hidden></div>
+
+    <!-- Pagination -->
+    <nav id="blog-pagination" class="article-list__pagination" aria-label="Pagination du blog" hidden>
+      <button id="blog-prev" class="btn btn-secondary" disabled>
+        &larr; <span class="pagination-label">Précédent</span>
+      </button>
+      <span id="blog-page-info" class="article-list__page-info">Page 1 sur 1</span>
+      <button id="blog-next" class="btn btn-secondary" disabled>
+        <span class="pagination-label">Suivant</span> &rarr;
+      </button>
+    </nav>
+
+  </div>
+</section>

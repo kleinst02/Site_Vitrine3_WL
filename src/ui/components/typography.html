@@ -1,0 +1,163 @@
+<!--
+ * ============================================================
+ * TYPOGRAPHY — Composant générique UI
+ * Design System : Élégant, sobre, professionnel
+ * Dépendances   : tokens.css, typography.css
+ *
+ * CLASSES DISPONIBLES
+ *   Titres : .heading-1 → .heading-6 (sur balises h1-h6)
+ *   Corps  : .text-body, .text-lead, .text-small, .text-caption
+ *   Liens  : .text-link
+ *   Code   : .text-code
+ *   Listes : .list-styled (puces check), .list-ordered (numéros)
+ *   Divers : .text-muted, .text-eyebrow, .blockquote
+ *
+ * PRINCIPE
+ *   Toujours utiliser la balise sémantique correcte (h1, p, ul, etc.)
+ *   ET la classe visuelle. Ne jamais styler directement les balises
+ *   globalement pour éviter les conflits.
+ * ============================================================
+-->
+
+<!-- === IMPORT (dans la page hôte) ==========================
+<link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+<link rel="stylesheet" href="/src/ui/components/typography.css">
+=========================================================== -->
+
+<!-- --------------------------------------------------------
+  TITRES h1 → h6
+--------------------------------------------------------- -->
+<section aria-label="Échelle typographique des titres" style="padding:var(--space-xl); display:flex; flex-direction:column; gap:var(--space-md);">
+
+  <h1 class="heading-1">Titre h1 — Principal de page (40px)</h1>
+  <h2 class="heading-2">Titre h2 — Section principale (32px)</h2>
+  <h3 class="heading-3">Titre h3 — Sous-section (28px)</h3>
+  <h4 class="heading-4">Titre h4 — Carte / bloc (24px)</h4>
+  <h5 class="heading-5">Titre h5 — Titre mineur (20px)</h5>
+  <h6 class="heading-6">Titre h6 — Label de section (16px uppercase)</h6>
+
+</section>
+
+<!-- --------------------------------------------------------
+  STYLES DE TEXTE CORPS
+--------------------------------------------------------- -->
+<section aria-label="Styles de texte" style="padding:var(--space-xl); display:flex; flex-direction:column; gap:var(--space-md); max-width:800px;">
+
+  <!-- Surtitre / Eyebrow -->
+  <p class="text-eyebrow">Surtitre accentué</p>
+
+  <!-- Lead / Introduction -->
+  <p class="text-lead">
+    Texte d'introduction (lead) — Plus grand et aéré, utilisé comme premier paragraphe
+    d'une section ou d'un article pour attirer l'attention du lecteur.
+  </p>
+
+  <!-- Corps principal -->
+  <p class="text-body">
+    Texte corps principal — La police de base à 16px avec un interligne de 1.5
+    pour une lisibilité optimale conforme aux standards WCAG. Ce texte convient
+    aux paragraphes courants, descriptions et contenus principaux de la page.
+  </p>
+
+  <!-- Petit texte -->
+  <p class="text-small">
+    Texte secondaire (14px) — Utilisé pour les méta-informations, dates, auteurs,
+    notes de bas de section. Maintient un contraste suffisant (WCAG AA).
+  </p>
+
+  <!-- Caption / Légende -->
+  <p class="text-caption">
+    Légende (caption, 12px) — Pour les descriptions d'images, crédits photo,
+    notes légales et informations accessoires de second plan.
+  </p>
+
+  <!-- Texte atténué -->
+  <p class="text-body text-muted">
+    Texte atténué (.text-muted) — Couleur plus claire pour les informations
+    contextuelles non essentielles.
+  </p>
+
+  <!-- Lien dans le texte -->
+  <p class="text-body">
+    Voici un exemple de
+    <a href="#" class="text-link">lien dans le corps du texte</a>
+    avec soulignement et couleur primaire pour une identification claire.
+  </p>
+
+  <!-- Code inline -->
+  <p class="text-body">
+    La propriété CSS <code class="text-code">var(--color-primary)</code>
+    retourne la couleur primaire définie dans les tokens.
+  </p>
+
+</section>
+
+<!-- --------------------------------------------------------
+  LISTE STYLISÉE — Puces check
+--------------------------------------------------------- -->
+<section aria-label="Liste avec puces check" style="padding:var(--space-xl); max-width:600px;">
+
+  <h3 class="heading-4" style="margin-bottom:var(--space-md);">Nos engagements</h3>
+
+  <ul class="list-styled" role="list">
+    <li>Accessibilité WCAG AA garantie sur tous les livrables</li>
+    <li>Design Mobile-First pour une expérience optimale sur tous les écrans</li>
+    <li>Performance web : score Lighthouse supérieur à 90/100</li>
+    <li>Respect du budget et des délais convenus</li>
+    <li>Support post-livraison inclus pendant 3 mois</li>
+  </ul>
+
+</section>
+
+<!-- --------------------------------------------------------
+  LISTE ORDONNÉE STYLISÉE — Numéros
+--------------------------------------------------------- -->
+<section aria-label="Liste ordonnée" style="padding:var(--space-xl); max-width:600px;">
+
+  <h3 class="heading-4" style="margin-bottom:var(--space-md);">Notre processus en 4 étapes</h3>
+
+  <ol class="list-ordered">
+    <li>
+      <div>
+        <strong>Audit &amp; Cadrage</strong><br>
+        <span class="text-small">Analyse de vos besoins, définition des objectifs et planification du projet.</span>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Conception &amp; Design</strong><br>
+        <span class="text-small">Maquettes interactives, design system et prototype validé avec vous.</span>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Développement</strong><br>
+        <span class="text-small">Intégration, tests et livraisons progressives en mode agile.</span>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Déploiement &amp; Suivi</strong><br>
+        <span class="text-small">Mise en ligne, formation et accompagnement post-livraison.</span>
+      </div>
+    </li>
+  </ol>
+
+</section>
+
+<!-- --------------------------------------------------------
+  BLOCKQUOTE — Citation
+--------------------------------------------------------- -->
+<section aria-label="Citation" style="padding:var(--space-xl); max-width:700px;">
+
+  <blockquote class="blockquote">
+    <p class="blockquote__text">
+      "La simplicité est la sophistication suprême. Un bon design ne se remarque pas,
+      il se ressent."
+    </p>
+    <footer>
+      <cite class="blockquote__cite">— Équipe Design ConseilIT</cite>
+    </footer>
+  </blockquote>
+
+</section>

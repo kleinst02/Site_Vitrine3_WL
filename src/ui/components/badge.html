@@ -1,0 +1,161 @@
+<!--
+ * ============================================================
+ * BADGE — Composant générique UI
+ * Design System : Élégant, sobre, professionnel
+ * Dépendances   : tokens.css, badge.css
+ *
+ * ÉTATS DOCUMENTÉS
+ *   Défaut   : Rendu normal, fond coloré + texte foncé
+ *   Interactif (role="button") : hover brightness réduit + shadow focus
+ *
+ * ACCESSIBILITÉ
+ *   - Badges décoratifs : aria-hidden="true" recommandé si redondants
+ *   - Badges de statut : utiliser role="status" ou inclure le texte
+ *     dans le flux de lecture (pas seulement visuel)
+ *   - Badge closeable : bouton avec aria-label explicite
+ *
+ * USAGE
+ *   <span class="badge badge-primary">Label</span>
+ *   <span class="badge badge-success badge-sm">Actif</span>
+ * ============================================================
+-->
+
+<!-- === IMPORT (dans la page hôte) ==========================
+<link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+<link rel="stylesheet" href="/src/ui/components/badge.css">
+=========================================================== -->
+
+<!-- --------------------------------------------------------
+  SECTION 1 : Variantes de couleur — Taille md (défaut)
+--------------------------------------------------------- -->
+<section aria-label="Variantes de badges" style="display:flex; flex-wrap:wrap; gap:var(--space-sm); align-items:center; padding:var(--space-lg);">
+
+  <span class="badge badge-primary">Primary</span>
+  <span class="badge badge-secondary">Secondary</span>
+  <span class="badge badge-success">Succès</span>
+  <span class="badge badge-error">Erreur</span>
+  <span class="badge badge-warning">Attention</span>
+  <span class="badge badge-info">Info</span>
+  <span class="badge badge-neutral">Neutre</span>
+
+</section>
+
+<!-- --------------------------------------------------------
+  SECTION 2 : Taille small (.badge-sm)
+--------------------------------------------------------- -->
+<section aria-label="Badges taille small" style="display:flex; flex-wrap:wrap; gap:var(--space-sm); align-items:center; padding:var(--space-lg);">
+
+  <span class="badge badge-primary badge-sm">Primary SM</span>
+  <span class="badge badge-secondary badge-sm">Secondary SM</span>
+  <span class="badge badge-success badge-sm">Succès SM</span>
+  <span class="badge badge-error badge-sm">Erreur SM</span>
+  <span class="badge badge-warning badge-sm">Attention SM</span>
+  <span class="badge badge-info badge-sm">Info SM</span>
+
+</section>
+
+<!-- --------------------------------------------------------
+  SECTION 3 : Badges avec point de statut (.badge--dot)
+  Usage : statut en ligne (actif, hors ligne, en attente…)
+--------------------------------------------------------- -->
+<section aria-label="Badges avec point de statut" style="display:flex; flex-wrap:wrap; gap:var(--space-sm); align-items:center; padding:var(--space-lg);">
+
+  <span class="badge badge-success badge--dot" role="status" aria-label="Statut : Actif">
+    Actif
+  </span>
+
+  <span class="badge badge-error badge--dot" role="status" aria-label="Statut : Hors ligne">
+    Hors ligne
+  </span>
+
+  <span class="badge badge-warning badge--dot" role="status" aria-label="Statut : En attente">
+    En attente
+  </span>
+
+  <span class="badge badge-neutral badge--dot" role="status" aria-label="Statut : Archivé">
+    Archivé
+  </span>
+
+</section>
+
+<!-- --------------------------------------------------------
+  SECTION 4 : Badges fermables (avec bouton ×)
+  Usage : filtres sélectionnés, tags supprimables
+--------------------------------------------------------- -->
+<section aria-label="Badges fermables" style="display:flex; flex-wrap:wrap; gap:var(--space-sm); align-items:center; padding:var(--space-lg);">
+
+  <span class="badge badge-primary">
+    Design System
+    <button
+      type="button"
+      class="badge__close"
+      aria-label="Supprimer le filtre Design System"
+    >
+      <svg aria-hidden="true" focusable="false" width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+        <path d="M1.707.293A1 1 0 0 0 .293 1.707L3.586 5 .293 8.293a1 1 0 1 0 1.414 1.414L5 6.414l3.293 3.293a1 1 0 0 0 1.414-1.414L6.414 5l3.293-3.293A1 1 0 0 0 8.293.293L5 3.586 1.707.293z"/>
+      </svg>
+    </button>
+  </span>
+
+  <span class="badge badge-secondary">
+    Tailwind CSS
+    <button
+      type="button"
+      class="badge__close"
+      aria-label="Supprimer le filtre Tailwind CSS"
+    >
+      <svg aria-hidden="true" focusable="false" width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+        <path d="M1.707.293A1 1 0 0 0 .293 1.707L3.586 5 .293 8.293a1 1 0 1 0 1.414 1.414L5 6.414l3.293 3.293a1 1 0 0 0 1.414-1.414L6.414 5l3.293-3.293A1 1 0 0 0 8.293.293L5 3.586 1.707.293z"/>
+      </svg>
+    </button>
+  </span>
+
+  <span class="badge badge-info">
+    WCAG AA
+    <button
+      type="button"
+      class="badge__close"
+      aria-label="Supprimer le filtre WCAG AA"
+    >
+      <svg aria-hidden="true" focusable="false" width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+        <path d="M1.707.293A1 1 0 0 0 .293 1.707L3.586 5 .293 8.293a1 1 0 1 0 1.414 1.414L5 6.414l3.293 3.293a1 1 0 0 0 1.414-1.414L6.414 5l3.293-3.293A1 1 0 0 0 8.293.293L5 3.586 1.707.293z"/>
+      </svg>
+    </button>
+  </span>
+
+</section>
+
+<!-- --------------------------------------------------------
+  SECTION 5 : Usage contextuel — Badge dans une carte
+  Illustration de l'intégration avec le composant card.html
+--------------------------------------------------------- -->
+<section aria-label="Badges en contexte" style="padding:var(--space-lg);">
+
+  <article style="
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  ">
+    <div style="display:flex; gap:var(--space-xs); flex-wrap:wrap;">
+      <span class="badge badge-primary badge-sm">Conseil</span>
+      <span class="badge badge-info badge-sm">Cloud</span>
+    </div>
+    <h3 style="font-family:var(--font-heading); font-size:var(--text-h4); font-weight:var(--font-weight-bold); color:var(--color-text-primary); margin:0;">
+      Migration vers le cloud
+    </h3>
+    <p style="font-size:var(--text-sm); color:var(--color-text-secondary); margin:0; line-height:var(--leading-normal);">
+      Stratégie et accompagnement pour migrer vos infrastructures on-premise
+      vers des solutions cloud hybrides sécurisées.
+    </p>
+    <div style="display:flex; align-items:center; gap:var(--space-sm); margin-top:var(--space-xs);">
+      <span class="badge badge-success badge--dot" role="status">Disponible</span>
+      <span style="font-size:var(--text-xs); color:var(--color-text-muted);">À partir de 2 500 €</span>
+    </div>
+  </article>
+
+</section>

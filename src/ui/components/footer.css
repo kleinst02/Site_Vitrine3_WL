@@ -1,0 +1,267 @@
+/*
+ * ============================================================
+ * FOOTER — Design System
+ * Composant : Pied de page responsive (3 colonnes + copyright)
+ * Layout     : Colonnes desktop, empilées mobile
+ * Dépend de  : tokens.css
+ * ============================================================
+ */
+
+/* --- Conteneur principal ---------------------------------- */
+.footer {
+  background-color: var(--color-secondary-800);
+  color: var(--color-text-inverse);
+  padding: var(--space-3xl) 0 0;
+}
+
+/* --- Grille interne --------------------------------------- */
+.footer__inner {
+  max-width: var(--container-max-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-container-x);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+/* Desktop : 3 colonnes égales */
+@media (min-width: 768px) {
+  .footer__inner {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2xl);
+  }
+}
+
+/* --- Colonne générique ------------------------------------ */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Titre de colonne */
+.footer-col__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h6);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-primary-300);
+  margin: 0;
+}
+
+/* --- Colonne Navigation — liens --------------------------- */
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.footer-links__item a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-target-min);
+  padding: var(--space-xs) 0;
+
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-secondary-300);
+  text-decoration: none;
+
+  transition: color var(--transition-fast);
+}
+
+.footer-links__item a:hover {
+  color: var(--color-text-inverse);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-links__item a:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-inverse);
+}
+
+/* --- Colonne Contact — informations ----------------------- */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-contact__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-secondary-300);
+  line-height: var(--leading-normal);
+}
+
+.footer-contact__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-primary-300);
+}
+
+.footer-contact__item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-contact__item a:hover {
+  color: var(--color-text-inverse);
+  text-decoration: underline;
+}
+
+.footer-contact__item a:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+}
+
+/* --- Colonne Réseaux sociaux ------------------------------ */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Liste des icônes sociales */
+.footer-social__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.footer-social__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+
+  background-color: var(--color-secondary-700);
+  border-radius: var(--radius-md);
+  color: var(--color-secondary-300);
+
+  transition: background-color var(--transition-fast),
+              color            var(--transition-fast);
+}
+
+.footer-social__link:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.footer-social__link:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  color: var(--color-text-inverse);
+  background-color: var(--color-primary);
+}
+
+.footer-social__icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Texte court de description sous les icônes */
+.footer-social__desc {
+  font-size: var(--text-sm);
+  color: var(--color-secondary-300);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+/* --- Barre de copyright ----------------------------------- */
+.footer-copyright {
+  margin-top: var(--space-2xl);
+  padding: var(--space-md) var(--space-container-x);
+  border-top: 1px solid var(--color-secondary-700);
+
+  max-width: var(--container-max-xl);
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .footer-copyright {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.footer-copyright__text {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-secondary-300);
+  margin: 0;
+}
+
+.footer-copyright__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-copyright__links a {
+  font-size: var(--text-xs);
+  color: var(--color-secondary-300);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-copyright__links a:hover {
+  color: var(--color-text-inverse);
+  text-decoration: underline;
+}
+
+.footer-copyright__links a:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+}
+
+/* Wrapper global pour inclure copyright à l'intérieur du footer */
+.footer-bottom {
+  margin-top: var(--space-2xl);
+  border-top: 1px solid var(--color-secondary-700);
+}
+
+.footer-bottom .footer-copyright {
+  margin-top: 0;
+  border-top: none;
+}
+
+/* --- Respect prefers-reduced-motion ----------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .footer-links__item a,
+  .footer-social__link,
+  .footer-contact__item a {
+    transition: none;
+  }
+}

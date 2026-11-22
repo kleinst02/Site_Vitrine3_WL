@@ -1,0 +1,136 @@
+<!--
+ * ============================================================
+ * BUTTONS — Composant générique UI
+ * Design System : Élégant, sobre, professionnel
+ * Dépendances   : tokens.css, buttons.css
+ *
+ * ÉTATS DOCUMENTÉS
+ *   Défaut   : Rendu normal
+ *   Survol   : :hover — changement couleur fond/bordure
+ *   Focus    : :focus-visible — anneau box-shadow var(--shadow-focus)
+ *   Actif    : :active — légère translation Y + couleur foncée
+ *   Désactivé: disabled / aria-disabled="true" — opacité réduite, curseur interdit
+ *
+ * USAGE
+ *   <button class="btn btn-primary">Libellé</button>
+ *   <a href="…" class="btn btn-outline btn-lg" role="button">Libellé</a>
+ * ============================================================
+-->
+
+<!-- === IMPORT TOKENS (dans la page hôte) ==================
+<link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+<link rel="stylesheet" href="/src/ui/components/buttons.css">
+=========================================================== -->
+
+<!-- --------------------------------------------------------
+  SECTION 1 : Variantes de style
+     Primaire · Secondaire · Outline · Ghost
+--------------------------------------------------------- -->
+<section aria-label="Variantes de boutons" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; padding:1.5rem;">
+
+  <!-- Bouton Primaire -->
+  <button type="button" class="btn btn-primary">
+    Action primaire
+  </button>
+
+  <!-- Bouton Secondaire -->
+  <button type="button" class="btn btn-secondary">
+    Action secondaire
+  </button>
+
+  <!-- Bouton Outline -->
+  <button type="button" class="btn btn-outline">
+    Action outline
+  </button>
+
+  <!-- Bouton Ghost -->
+  <button type="button" class="btn btn-ghost">
+    Action ghost
+  </button>
+
+</section>
+
+<!-- --------------------------------------------------------
+  SECTION 2 : Tailles — sm / md (défaut) / lg
+--------------------------------------------------------- -->
+<section aria-label="Tailles de boutons" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; padding:1.5rem;">
+
+  <!-- Taille Small -->
+  <button type="button" class="btn btn-primary btn-sm">
+    Petit
+  </button>
+
+  <!-- Taille Medium (défaut) -->
+  <button type="button" class="btn btn-primary">
+    Moyen
+  </button>
+
+  <!-- Taille Large -->
+  <button type="button" class="btn btn-primary btn-lg">
+    Grand
+  </button>
+
+</section>
+
+<!-- --------------------------------------------------------
+  SECTION 3 : États désactivés
+--------------------------------------------------------- -->
+<section aria-label="Boutons désactivés" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; padding:1.5rem;">
+
+  <!-- Désactivé natif -->
+  <button type="button" class="btn btn-primary" disabled aria-disabled="true">
+    Primaire désactivé
+  </button>
+
+  <button type="button" class="btn btn-secondary" disabled aria-disabled="true">
+    Secondaire désactivé
+  </button>
+
+  <button type="button" class="btn btn-outline" disabled aria-disabled="true">
+    Outline désactivé
+  </button>
+
+  <button type="button" class="btn btn-ghost" disabled aria-disabled="true">
+    Ghost désactivé
+  </button>
+
+</section>
+
+<!-- --------------------------------------------------------
+  SECTION 4 : Bouton avec icône (SVG inline)
+  Note : remplacer le path SVG par l'icône souhaitée
+--------------------------------------------------------- -->
+<section aria-label="Boutons avec icône" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; padding:1.5rem;">
+
+  <!-- Bouton primaire + icône gauche -->
+  <button type="button" class="btn btn-primary">
+    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 1.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11zM8 5a.75.75 0 0 1 .75.75v2.5h2.5a.75.75 0 0 1 0 1.5h-2.5v2.5a.75.75 0 0 1-1.5 0v-2.5h-2.5a.75.75 0 0 1 0-1.5h2.5v-2.5A.75.75 0 0 1 8 5z"/>
+    </svg>
+    Ajouter
+  </button>
+
+  <!-- Bouton icône seule (accessible : aria-label obligatoire) -->
+  <button type="button" class="btn btn-outline btn-icon" aria-label="Ajouter un élément">
+    <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 1.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11zM8 5a.75.75 0 0 1 .75.75v2.5h2.5a.75.75 0 0 1 0 1.5h-2.5v2.5a.75.75 0 0 1-1.5 0v-2.5h-2.5a.75.75 0 0 1 0-1.5h2.5v-2.5A.75.75 0 0 1 8 5z"/>
+    </svg>
+  </button>
+
+</section>
+
+<!-- --------------------------------------------------------
+  SECTION 5 : Lien stylisé en bouton (balise <a>)
+  Usage : navigation, lien externe, CTA lien
+--------------------------------------------------------- -->
+<section aria-label="Liens stylisés en bouton" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; padding:1.5rem;">
+
+  <a href="#" class="btn btn-primary" role="button">
+    Lien CTA primaire
+  </a>
+
+  <a href="#" class="btn btn-outline" role="button">
+    Lien outline
+  </a>
+
+</section>

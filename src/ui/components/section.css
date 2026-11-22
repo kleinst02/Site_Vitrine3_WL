@@ -1,0 +1,139 @@
+/*
+ * ============================================================
+ * SECTION — Design System
+ * Composant : Wrapper de section centré, padding responsive
+ * Variantes  : fond normal, fond alterné (.section-alt)
+ * Dépend de  : tokens.css
+ * ============================================================
+ */
+
+/* --- Section de base -------------------------------------- */
+.section {
+  padding-top: var(--space-section-y);
+  padding-bottom: var(--space-section-y);
+  background-color: var(--color-background);
+}
+
+/* --- Variante fond alterné -------------------------------- */
+.section-alt {
+  background-color: var(--color-surface-alt);
+}
+
+/* --- Variante fond primaire (hero, CTA) ------------------- */
+.section-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+/* --- Variante fond sombre --------------------------------- */
+.section-dark {
+  background-color: var(--color-secondary-800);
+  color: var(--color-text-inverse);
+}
+
+/* --- Conteneur centré max-width --------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max-xl);  /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-container-x);
+  padding-right: var(--space-container-x);
+}
+
+/* Variante largeur étroite (texte, articles) */
+.container--narrow {
+  max-width: var(--container-max-md);  /* 768px */
+}
+
+/* Variante pleine largeur (hero, images pleine-page) */
+.container--wide {
+  max-width: var(--container-max-2xl); /* 1536px */
+}
+
+/* --- En-tête de section ----------------------------------- */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* Surtitre ("eyebrow") */
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* Sur fond sombre ou primaire : couleur claire */
+.section-primary .section-eyebrow,
+.section-dark .section-eyebrow {
+  color: var(--color-primary-300);
+}
+
+/* Titre principal de section */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+  margin: 0;
+  max-width: 20ch; /* Environ 20 mots max pour la lisibilité */
+}
+
+.section-primary .section-title,
+.section-dark .section-title {
+  color: var(--color-text-inverse);
+}
+
+/* Description de section */
+.section-desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+  max-width: var(--prose-width);
+}
+
+.section-primary .section-desc,
+.section-dark .section-desc {
+  color: var(--color-secondary-200);
+}
+
+/* --- Ajustements responsive pour tablette ------------------ */
+@media (min-width: 640px) {
+  .container {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+
+  .section-title {
+    font-size: calc(var(--text-h2) * 1.1);
+  }
+}
+
+/* --- Ajustements responsive pour desktop ------------------- */
+@media (min-width: 1024px) {
+  .container {
+    padding-left: var(--space-2xl);
+    padding-right: var(--space-2xl);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-3xl);
+  }
+
+  .section-title {
+    font-size: var(--text-h1);
+  }
+}

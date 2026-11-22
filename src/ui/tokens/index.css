@@ -1,0 +1,294 @@
+/*
+ * ============================================================
+ * index.css — Point d'entrée des styles de base
+ * Importe les design tokens et applique le reset/base styles
+ * ============================================================
+ */
+
+@import './tokens.css';
+
+/* ==========================================================
+ * RESET & BOX MODEL
+ * Normalisation inter-navigateurs, Mobile-First
+ * ========================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Évite les dépassements horizontaux */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* ==========================================================
+ * ROOT / HTML
+ * ========================================================== */
+
+html {
+  /* Scroll fluide (désactivé avec prefers-reduced-motion) */
+  scroll-behavior: smooth;
+
+  /* Taille de base 16px — 1rem = 16px */
+  font-size: 16px;
+
+  /* Améliore le rendu des polices */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Couleur de scrollbar (navigateurs modernes) */
+  scrollbar-color: var(--color-neutral-300) var(--color-neutral-100);
+  scrollbar-width: thin;
+}
+
+/* ==========================================================
+ * BODY — Defaults utilisant les design tokens
+ * ========================================================== */
+
+body {
+  /* Typographie */
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+
+  /* Couleurs */
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+
+  /* Largeur minimale mobile */
+  min-width: 320px;
+
+  /* Transitions globales */
+  transition: background-color var(--transition-normal),
+              color var(--transition-normal);
+}
+
+/* ==========================================================
+ * TYPOGRAPHIE — Éléments de base
+ * ========================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+}
+
+h1 { font-size: var(--text-h1); }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+h4 { font-size: var(--text-h4); }
+h5 { font-size: var(--text-h5); font-weight: var(--font-weight-subhead); }
+h6 { font-size: var(--text-h6); font-weight: var(--font-weight-subhead); }
+
+p {
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  max-width: var(--prose-width);
+}
+
+small {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Caption / légende */
+.caption,
+figcaption {
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--color-text-muted);
+}
+
+/* Texte monospace */
+code, pre, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+pre {
+  overflow-x: auto;
+  padding: var(--space-md);
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+}
+
+/* ==========================================================
+ * LIENS
+ * Contraste : bleu primaire sur fond blanc ≈ 5.6:1 ✓ AA
+ * ========================================================== */
+
+a {
+  color: var(--color-primary-600);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+  text-decoration-thickness: 2px;
+}
+
+a:active {
+  color: var(--color-primary-active);
+}
+
+/* ==========================================================
+ * FOCUS VISIBLE — Accessibilité clavier (WCAG 2.4.7)
+ * Anneau de focus visible sur tous les éléments interactifs
+ * ========================================================== */
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Supprime l'outline par défaut uniquement si focus-visible est géré */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ==========================================================
+ * IMAGES & MÉDIAS
+ * ========================================================== */
+
+img,
+video,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================
+ * LISTES
+ * ========================================================== */
+
+ul, ol {
+  padding-left: var(--space-lg);
+}
+
+li {
+  line-height: var(--leading-normal);
+}
+
+/* ==========================================================
+ * FORMULAIRES — Reset minimal
+ * ========================================================== */
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Cibles tactiles minimales (WCAG 2.5.5) */
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+select,
+a {
+  min-height: var(--touch-target-min);
+}
+
+/* ==========================================================
+ * SÉPARATEURS
+ * ========================================================== */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin-block: var(--space-lg);
+}
+
+/* ==========================================================
+ * SÉLECTION DE TEXTE
+ * ========================================================== */
+
+::selection {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-900);
+}
+
+/* ==========================================================
+ * ACCESSIBILITÉ — prefers-reduced-motion
+ * Désactive toutes les animations/transitions si demandé
+ * ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ==========================================================
+ * SURCHARGES RESPONSIVE — Mobile-First
+ *
+ * Les styles de base ciblent mobile (< 640px).
+ * Les surcharges ci-dessous ajustent l'échelle typographique
+ * pour tablette et desktop.
+ * ========================================================== */
+
+/* Tablette : >= 640px */
+@media (min-width: 640px) {
+  :root {
+    --text-h1: 3rem;      /* 48px */
+    --text-h2: 2.25rem;   /* 36px */
+    --text-h3: 1.875rem;  /* 30px */
+    --space-container-x: var(--space-xl);
+  }
+}
+
+/* Desktop : >= 1024px */
+@media (min-width: 1024px) {
+  :root {
+    --text-h1: 3.5rem;    /* 56px */
+    --text-h2: 2.5rem;    /* 40px */
+    --text-h3: 2rem;      /* 32px */
+    --space-container-x: var(--space-3xl);
+    --space-section-y: var(--space-4xl);
+  }
+}
+
+/* Large : >= 1280px */
+@media (min-width: 1280px) {
+  :root {
+    --space-container-x: var(--space-4xl);
+  }
+}

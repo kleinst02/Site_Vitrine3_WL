@@ -1,0 +1,62 @@
+/* ==========================================================
+ * Composant : Bouton téléchargement CV PDF
+ * Dépendances : /src/ui/tokens/tokens.css, buttons.css
+ * ========================================================== */
+
+.cv-download-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.cv-download__icon {
+  flex-shrink: 0;
+}
+
+/* --- Spinner --------------------------------------------- */
+
+.cv-download__spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: cv-spin 0.6s linear infinite;
+  margin-left: var(--space-xs);
+}
+
+.cv-download--loading .cv-download__icon {
+  display: none;
+}
+
+.cv-download--loading .cv-download__spinner {
+  display: inline-block;
+}
+
+@keyframes cv-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-download__spinner {
+    animation: none;
+    opacity: 0.5;
+  }
+}
+
+/* --- Erreur ---------------------------------------------- */
+
+.cv-download__error {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-error);
+  margin-top: var(--space-xs);
+}

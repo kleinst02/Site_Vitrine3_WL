@@ -1,0 +1,316 @@
+/*
+ * ============================================================
+ * NAV — Design System
+ * Composant : Header responsive (desktop + menu mobile overlay)
+ * États      : défaut, survol liens, focus, menu ouvert/fermé
+ * Dépend de  : tokens.css
+ * ============================================================
+ */
+
+/* --- Conteneur principal du header ------------------------ */
+.nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sticky);
+
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+
+  /* Transition pour l'ombre au scroll (ajout via JS si nécessaire) */
+  transition: box-shadow var(--transition-normal);
+}
+
+/* --- Conteneur interne (centré, max-width) ---------------- */
+.nav__inner {
+  max-width: var(--container-max-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-container-x);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px; /* Cible tactile généreuse */
+  gap: var(--space-md);
+}
+
+/* --- Logo ------------------------------------------------- */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+  flex-shrink: 0;
+  min-height: var(--touch-target-min);
+}
+
+.nav-logo__img {
+  height: 36px;
+  width: auto;
+}
+
+.nav-logo__text {
+  font-family: var(--font-heading);
+  font-size: var(--text-h5);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+}
+
+.nav-logo:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+}
+
+/* --- Navigation desktop — liens centrés ------------------- */
+.nav-links {
+  display: none; /* Masqué mobile, visible desktop */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-sm);
+  min-height: var(--touch-target-min);
+
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  letter-spacing: var(--tracking-normal);
+
+  transition: color var(--transition-fast),
+              background-color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+}
+
+.nav-link:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  color: var(--color-primary);
+}
+
+/* Lien actif (page courante) */
+.nav-link--active,
+.nav-link[aria-current="page"] {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  background-color: var(--color-primary-subtle);
+}
+
+/* --- Actions droite (langue + CTA) ------------------------ */
+.nav-actions {
+  display: none; /* Masqué mobile */
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+/* Bouton switch langue */
+.nav-lang {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-wider);
+
+  background-color: transparent;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-transform: uppercase;
+
+  transition: color var(--transition-fast),
+              border-color var(--transition-fast),
+              background-color var(--transition-fast);
+}
+
+.nav-lang:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+}
+
+.nav-lang:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* --- Bouton hamburger (mobile) ---------------------------- */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: var(--space-sm);
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--color-text-primary);
+
+  transition: background-color var(--transition-fast);
+}
+
+.nav-toggle:hover {
+  background-color: var(--color-surface-alt);
+}
+
+.nav-toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* Barres du hamburger */
+.nav-toggle__bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: var(--radius-full);
+  transform-origin: center;
+  transition: transform var(--transition-normal),
+              opacity   var(--transition-fast);
+}
+
+/* Transformation en X quand menu ouvert */
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Menu mobile overlay ---------------------------------- */
+.nav-mobile {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  background-color: var(--color-surface);
+
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg) var(--space-container-x);
+  padding-top: calc(64px + var(--space-lg)); /* Hauteur header + espace */
+  gap: var(--space-xs);
+
+  overflow-y: auto;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity  var(--transition-normal),
+              transform var(--transition-normal);
+}
+
+/* Visibilité : contrôlée via JS (aria-hidden / class) */
+.nav-mobile--open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Lien dans le menu mobile */
+.nav-mobile__link {
+  display: flex;
+  align-items: center;
+  padding: var(--space-md) var(--space-md);
+  min-height: var(--touch-target-min);
+
+  font-family: var(--font-heading);
+  font-size: var(--text-h5);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border-bottom: 1px solid var(--color-border);
+
+  transition: color            var(--transition-fast),
+              background-color var(--transition-fast);
+}
+
+.nav-mobile__link:hover {
+  color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+}
+
+.nav-mobile__link:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.nav-mobile__link--active,
+.nav-mobile__link[aria-current="page"] {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Zone actions mobile (langue + CTA) */
+.nav-mobile__actions {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* --- Desktop : afficher les éléments cachés --------------- */
+@media (min-width: 1024px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-actions {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  /* Le menu mobile ne doit jamais être visible sur desktop */
+  .nav-mobile {
+    display: none !important;
+  }
+}
+
+/* --- Respect prefers-reduced-motion ----------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle__bar,
+  .nav-mobile {
+    transition: none;
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "lang": "en",
+  "langName": "English",
+  "langSwitch": "FR",
+  "langSwitchLabel": "Passer en français",
+
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Projects",
+    "blog": "Blog",
+    "contact": "Contact",
+    "logo": "Wilfried Langry",
+    "menuOpen": "Open navigation menu",
+    "menuClose": "Close navigation menu"
+  },
+
+  "home": {
+    "title": "Wilfried Langry — Senior CRM Consultant & Digital Transformation",
+    "metaDesc": "Senior CRM Salesforce consultant and digital transformation. Expertise in Salesforce, Selligent, ETL and agile methodologies.",
+    "heroEyebrow": "Senior CRM Consultant & Digital Transformation",
+    "heroTitle": "Accelerate your <span class=\"hero__highlight\">digital transformation</span> with a CRM expert",
+    "heroSubtitle": "With 15+ years of experience in quality management and CRM consulting, I help businesses implement and optimize their Salesforce, Selligent and ETL solutions.",
+    "heroCTA": "Contact me",
+    "heroSecondary": "My services",
+    "servicesTitle": "My expertise",
+    "servicesSubtitle": "Proven skills to support your growth.",
+    "ctaTitle": "Have a project or question?",
+    "ctaText": "Don't hesitate to reach out to discuss your CRM and digital transformation needs."
+  },
+
+  "about": {
+    "title": "About — Wilfried Langry",
+    "metaDesc": "Discover Wilfried Langry's career: senior CRM Salesforce consultant, former quality manager, PSM I certified Scrum Master.",
+    "role": "Senior CRM Consultant & Digital Transformation",
+    "bio": "Senior CRM and digital transformation consultant at Magellan. Working on Salesforce for an international company, following Selligent and ETL projects. Former quality manager in the food industry (10+ years), bringing rigor and documentation to every engagement.",
+    "experience": "Professional experience",
+    "skills": "Skills",
+    "education": "Education & Certifications",
+    "present": "Present"
+  },
+
+  "services": {
+    "title": "Services — Wilfried Langry",
+    "metaDesc": "CRM Salesforce consulting, Selligent marketing automation, ETL integration and agile coaching.",
+    "pageTitle": "My services",
+    "pageSubtitle": "Complementary expertise to support your digital transformation.",
+    "ctaText": "Need tailored support?",
+    "ctaCTA": "Let's discuss your project",
+    "learnMore": "Learn more"
+  },
+
+  "portfolio": {
+    "title": "Projects — Wilfried Langry",
+    "metaDesc": "CRM, marketing automation and ETL project portfolio.",
+    "pageTitle": "Projects",
+    "pageSubtitle": "Some representative projects from my career.",
+    "ctaTitle": "Want to learn more?",
+    "ctaText": "Contact me to discuss your needs.",
+    "viewProject": "View project"
+  },
+
+  "blog": {
+    "title": "Blog — Wilfried Langry",
+    "metaDesc": "Articles about CRM, Salesforce, digital transformation and agility.",
+    "pageTitle": "Blog",
+    "pageSubtitle": "Insights and experience on CRM, data and agility.",
+    "readMore": "Read more",
+    "previous": "Previous",
+    "next": "Next",
+    "pageOf": "Page {current} of {total}",
+    "noArticles": "No articles yet.",
+    "loading": "Loading articles...",
+    "error": "Unable to load articles.",
+    "backToList": "← Back to articles",
+    "publishedOn": "Published on",
+    "by": "By"
+  },
+
+  "contact": {
+    "title": "Contact — Wilfried Langry",
+    "metaDesc": "Contact Wilfried Langry for your CRM projects or any professional inquiry.",
+    "pageTitle": "Contact",
+    "pageSubtitle": "Have a question or a project? Feel free to reach out.",
+    "coordTitle": "Contact info",
+    "location": "Location",
+    "locationValue": "Northern France & Paris area",
+    "linkedin": "LinkedIn",
+    "languages": "Languages",
+    "languagesValue": "French, Professional English",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "subjectLabel": "Subject",
+    "messageLabel": "Message",
+    "submit": "Send",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successText": "Thank you, I will get back to you shortly."
+  },
+
+  "footer": {
+    "copyright": "© {year} Wilfried Langry. All rights reserved.",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy",
+    "cookies": "Cookies",
+    "a11y": "Accessibility"
+  },
+
+  "error404": {
+    "title": "Page not found",
+    "text": "The page you're looking for doesn't exist or has been moved.",
+    "cta": "Back to home"
+  },
+
+  "routes": {
+    "home": "/",
+    "about": "/about",
+    "services": "/services",
+    "portfolio": "/portfolio",
+    "blog": "/blog",
+    "contact": "/contact"
+  }
+}

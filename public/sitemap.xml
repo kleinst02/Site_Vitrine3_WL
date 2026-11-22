@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Accueil / Home -->
+  <url>
+    <loc>https://wilfriedlangry.com/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en" />
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://wilfriedlangry.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en" />
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- À propos / About -->
+  <url>
+    <loc>https://wilfriedlangry.com/a-propos</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/a-propos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/about" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wilfriedlangry.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/a-propos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/about" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Services -->
+  <url>
+    <loc>https://wilfriedlangry.com/services</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/services" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wilfriedlangry.com/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/services" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Réalisations / Portfolio -->
+  <url>
+    <loc>https://wilfriedlangry.com/realisations</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/realisations" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/portfolio" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wilfriedlangry.com/en/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/realisations" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/portfolio" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://wilfriedlangry.com/blog</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/blog" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wilfriedlangry.com/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/blog" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://wilfriedlangry.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/contact" />
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://wilfriedlangry.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/contact" />
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

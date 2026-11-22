@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="portfolio.title">Réalisations — Wilfried Langry</title>
+  <meta name="description" content="Portfolio de projets : migration Salesforce, marketing automation Selligent, flux ETL et accompagnement agile.">
+  <meta property="og:title" content="Réalisations — Wilfried Langry">
+  <meta property="og:description" content="Réalisations et projets de Wilfried Langry : migrations Salesforce, marketing automation Selligent, intégrations ETL et accompagnement agile.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wilfriedlangry.com/realisations">
+  <link rel="canonical" href="https://wilfriedlangry.com/realisations">
+  <link rel="alternate" hreflang="fr" href="https://wilfriedlangry.com/realisations">
+  <link rel="alternate" hreflang="en" href="https://wilfriedlangry.com/en/portfolio">
+
+  <link rel="stylesheet" href="/src/ui/tokens/tokens.css">
+  <link rel="stylesheet" href="/src/ui/tokens/index.css">
+  <link rel="stylesheet" href="/src/ui/components/nav.css">
+  <link rel="stylesheet" href="/src/ui/components/buttons.css">
+  <link rel="stylesheet" href="/src/ui/components/card.css">
+  <link rel="stylesheet" href="/src/ui/components/badge.css">
+  <link rel="stylesheet" href="/src/ui/components/section.css">
+  <link rel="stylesheet" href="/src/ui/components/typography.css">
+  <link rel="stylesheet" href="/src/ui/components/footer.css">
+  <link rel="stylesheet" href="/src/pages/_layout/layout.css">
+  <link rel="stylesheet" href="/src/components/portfolio/project-card.css">
+  <link rel="stylesheet" href="/src/components/portfolio/portfolio-grid.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <header id="site-header"></header>
+  <main id="main-content">
+
+    <section class="section" aria-labelledby="portfolio-heading">
+      <div class="container">
+        <h1 id="portfolio-heading" class="page-title" data-i18n="portfolio.pageTitle">Réalisations</h1>
+        <p class="page-subtitle" data-i18n="portfolio.pageSubtitle">Quelques projets représentatifs de mon parcours.</p>
+        <div id="portfolio-grid" class="portfolio-grid"></div>
+      </div>
+    </section>
+
+    <section class="section section--accent" aria-labelledby="portfolio-cta">
+      <div class="container cta-section">
+        <h2 id="portfolio-cta" class="cta-section__title" data-i18n="portfolio.ctaTitle">Envie d'en savoir plus ?</h2>
+        <p class="cta-section__text" data-i18n="portfolio.ctaText">Contactez-moi pour discuter de vos besoins.</p>
+        <a href="/contact" class="btn btn-primary btn-lg" data-i18n="home.heroCTA">Me contacter</a>
+      </div>
+    </section>
+
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="/src/i18n/index.js"></script>
+  <script src="/src/pages/_layout/layout.js"></script>
+  <script src="/src/pages/router.js"></script>
+  <script src="/src/components/portfolio/portfolio-grid.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Robots.txt — wilfriedlangry.com
+# Autoriser l'indexation de tout le site
+
+User-agent: *
+Allow: /
+
+# Bloquer les répertoires techniques
+Disallow: /src/backend/
+Disallow: /node_modules/
+Disallow: /.tasks/
+Disallow: /.claude/
+Disallow: /.mailboxes/
+Disallow: /.env
+
+# Sitemap
+Sitemap: https://wilfriedlangry.com/sitemap.xml

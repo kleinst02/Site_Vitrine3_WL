@@ -1,0 +1,33 @@
+{
+  "errors": {
+    "400": "Bad request.",
+    "401": "Authentication required.",
+    "403": "Access forbidden.",
+    "404": "Resource not found.",
+    "409": "Data conflict.",
+    "422": "Unprocessable entity.",
+    "429": "Too many requests. Please try again later.",
+    "500": "Internal server error.",
+    "profile_not_found": "Profile not found.",
+    "lang_invalid": "Language must be \"fr\" or \"en\".",
+    "validation_failed": "Validation failed. Please check the fields below.",
+    "pdf_generation_failed": "An error occurred while generating the PDF."
+  },
+  "cv": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Professional Experience",
+    "education": "Education",
+    "contact": "Contact",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "Email",
+    "filename_prefix": "Resume"
+  },
+  "email": {
+    "contact_notification_subject": "New contact message — {{name}}",
+    "contact_notification_body": "You received a new message from {{name}} ({{email}}).\n\nSubject: {{subject}}\n\nMessage:\n{{message}}",
+    "contact_confirmation_subject": "Your message has been received",
+    "contact_confirmation_body": "Hello {{name}},\n\nWe have received your message and will get back to you as soon as possible.\n\nBest regards."
+  }
+}
