@@ -3,6 +3,49 @@
  * Dépendances : /src/ui/tokens/tokens.css
  * ========================================================== */
 
+/* --- Section hero contact -------------------------------- */
+
+.section[aria-labelledby="contact-page-heading"] {
+  background-color: var(--color-primary-50);
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+/* --- Titre de page avec trait d'accentuation ------------ */
+
+.page-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-sm);
+  position: relative;
+  display: inline-block;
+}
+
+.page-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  margin-top: var(--space-sm);
+}
+
+.page-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-xl);
+  max-width: var(--prose-width);
+}
+
+/* --- Layout grille --------------------------------------- */
+
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -15,6 +58,15 @@
     grid-template-columns: 2fr 1fr;
     align-items: start;
   }
+}
+
+/* --- Aside coordonnées (carte) --------------------------- */
+
+.contact-layout__info {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-xl);
 }
 
 /* --- Coordonnées ----------------------------------------- */
@@ -31,12 +83,29 @@
   display: flex;
   gap: var(--space-md);
   align-items: flex-start;
+  padding-bottom: var(--space-lg);
   margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.contact-info__item svg {
+.contact-info__item:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+/* Wrapper circulaire pour les icônes SVG via pseudo-wrapper */
+/* Le SVG est stylé pour simuler un fond circulaire sans modifier le HTML */
+.contact-info__item > svg {
   flex-shrink: 0;
-  margin-top: 2px;
+  /* Fond circulaire simulé : padding + background sur le SVG lui-même n'est pas
+     possible sans box-model — on utilise un outline décalé + border-radius */
+  padding: var(--space-sm);
+  box-sizing: content-box;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-primary-50);
+  border-radius: var(--radius-full);
 }
 
 .contact-info__label {
@@ -45,7 +114,7 @@
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: var(--tracking-wider);
   margin: 0 0 var(--space-xs);
 }
 
